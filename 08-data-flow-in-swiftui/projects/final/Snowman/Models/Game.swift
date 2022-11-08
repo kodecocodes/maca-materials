@@ -98,11 +98,9 @@ struct Game: Identifiable {
       gameStatus = .won
       statusText = "HURRAY!!!! YOU WON!"
     } else if incorrectGuessCount == 7 {
-      // 4
       gameStatus = .lost
       statusText = "You lost. Better luck next time."
     } else {
-      // 5
       statusText = "Enter another letter to guess the word."
     }
   }
