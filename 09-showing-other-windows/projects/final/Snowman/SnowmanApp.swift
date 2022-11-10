@@ -46,7 +46,7 @@ struct SnowmanApp: App {
     }
 
     Window("Statistics", id: "stats") {
-      StatsView(appState: appState)
+      StatsView(games: appState.games)
     }
     .keyboardShortcut("t", modifiers: .command)
   }

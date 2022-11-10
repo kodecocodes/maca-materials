@@ -33,14 +33,14 @@
 import SwiftUI
 
 struct WordStats: View {
-  @ObservedObject var appState: AppState
+  var games: [Game]
 
   var body: some View {
     Text(wordCountReport)
   }
 
   var wordCountReport: String {
-    let completedGames = appState.games.filter {
+    let completedGames = games.filter {
       $0.gameStatus != .inProgress
     }
 
@@ -55,6 +55,6 @@ struct WordStats: View {
 
 struct WordStats_Previews: PreviewProvider {
   static var previews: some View {
-    WordStats(appState: AppState())
+    WordStats(games: [])
   }
 }

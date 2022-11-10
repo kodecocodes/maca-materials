@@ -33,17 +33,17 @@
 import SwiftUI
 
 struct GameStats: View {
-  @ObservedObject var appState: AppState
+  var games: [Game]
 
   var body: some View {
     Text(gameReport)
   }
 
   var gameReport: String {
-    let wonGames = appState.games.filter {
+    let wonGames = games.filter {
       $0.gameStatus == .won
     }
-    let lostGames = appState.games.filter {
+    let lostGames = games.filter {
       $0.gameStatus == .lost
     }
 
@@ -56,6 +56,6 @@ struct GameStats: View {
 
 struct GameStats_Previews: PreviewProvider {
   static var previews: some View {
-    GameStats(appState: AppState())
+    GameStats(games: [])
   }
 }

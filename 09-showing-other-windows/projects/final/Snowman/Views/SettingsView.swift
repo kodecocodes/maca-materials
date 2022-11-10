@@ -50,7 +50,7 @@ struct SettingsView: View {
         LabeledContent("Maximum word length: \(Int(maxWordLength))") {
           Slider(
             value: $maxWordLength,
-            in: Double(minWordLength)...12)
+            in: Double(minWordLength) ... 12)
         }
 
         Toggle("Allow proper nouns", isOn: $useProperNouns)

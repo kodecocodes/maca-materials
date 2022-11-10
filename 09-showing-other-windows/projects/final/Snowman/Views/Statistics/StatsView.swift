@@ -33,16 +33,16 @@
 import SwiftUI
 
 struct StatsView: View {
-  @ObservedObject var appState: AppState
+  var games: [Game]
 
   var body: some View {
     TabView {
-      GameStats(appState: appState)
+      GameStats(games: games)
         .tabItem {
           Text("Games Won & Lost")
         }
 
-      WordStats(appState: appState)
+      WordStats(games: games)
         .tabItem {
           Text("Length of Words")
         }
@@ -53,6 +53,6 @@ struct StatsView: View {
 
 struct StatsView_Previews: PreviewProvider {
   static var previews: some View {
-    StatsView(appState: AppState())
+    StatsView(games: [])
   }
 }
