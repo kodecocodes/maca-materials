@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		263D182E290DEF0A0091029F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D182D290DEF0A0091029F /* AppState.swift */; };
+		263D4A39290363D0008C03AD /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D4A38290363D0008C03AD /* Game.swift */; };
+		263D4A3B29036494008C03AD /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D4A3A29036494008C03AD /* GameStatus.swift */; };
+		263D4A3E290365F6008C03AD /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D4A3D290365F6008C03AD /* Letter.swift */; };
+		2643824E2919E15B00941347 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643824D2919E15B00941347 /* SettingsView.swift */; };
+		264AC19928FA72CA00947F2C /* SnowmanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AC19828FA72CA00947F2C /* SnowmanApp.swift */; };
+		264AC19B28FA72CA00947F2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AC19A28FA72CA00947F2C /* ContentView.swift */; };
+		264AC19D28FA72CB00947F2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264AC19C28FA72CB00947F2C /* Assets.xcassets */; };
+		264AC1A028FA72CB00947F2C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264AC19F28FA72CB00947F2C /* Preview Assets.xcassets */; };
+		264AC1A828FA732600947F2C /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AC1A728FA732600947F2C /* SidebarView.swift */; };
+		264AC1AA28FA732E00947F2C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AC1A928FA732E00947F2C /* GameView.swift */; };
+		264AC1AD28FA7A8500947F2C /* LettersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AC1AC28FA7A8500947F2C /* LettersView.swift */; };
+		264AC1AF28FA7AF100947F2C /* GuessesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AC1AE28FA7AF100947F2C /* GuessesView.swift */; };
+		2655F6B2292B7A69006C1FE4 /* ChartPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655F6B1292B7A69006C1FE4 /* ChartPoint.swift */; };
+		2686B6242919EAB500D3DB3E /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686B6232919EAB500D3DB3E /* StatsView.swift */; };
+		2686B6262919EBC300D3DB3E /* GameStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686B6252919EBC300D3DB3E /* GameStats.swift */; };
+		2686B6282919EBCA00D3DB3E /* WordStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2686B6272919EBCA00D3DB3E /* WordStats.swift */; };
+		26A2B4F929036DE4006E8232 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 26A2B4F829036DE4006E8232 /* words.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		263D182D290DEF0A0091029F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		263D4A38290363D0008C03AD /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		263D4A3A29036494008C03AD /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
+		263D4A3D290365F6008C03AD /* Letter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
+		2643824D2919E15B00941347 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		264AC19528FA72CA00947F2C /* Snowman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snowman.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		264AC19828FA72CA00947F2C /* SnowmanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowmanApp.swift; sourceTree = "<group>"; };
+		264AC19A28FA72CA00947F2C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		264AC19C28FA72CB00947F2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		264AC19F28FA72CB00947F2C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		264AC1A128FA72CB00947F2C /* Snowman.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Snowman.entitlements; sourceTree = "<group>"; };
+		264AC1A728FA732600947F2C /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		264AC1A928FA732E00947F2C /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		264AC1AC28FA7A8500947F2C /* LettersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersView.swift; sourceTree = "<group>"; };
+		264AC1AE28FA7AF100947F2C /* GuessesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessesView.swift; sourceTree = "<group>"; };
+		2655F6B1292B7A69006C1FE4 /* ChartPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartPoint.swift; sourceTree = "<group>"; };
+		2686B6232919EAB500D3DB3E /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		2686B6252919EBC300D3DB3E /* GameStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStats.swift; sourceTree = "<group>"; };
+		2686B6272919EBCA00D3DB3E /* WordStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStats.swift; sourceTree = "<group>"; };
+		26A2B4F829036DE4006E8232 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		264AC19228FA72CA00947F2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		263D4A3C290364BC008C03AD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				263D182D290DEF0A0091029F /* AppState.swift */,
+				263D4A38290363D0008C03AD /* Game.swift */,
+				263D4A3A29036494008C03AD /* GameStatus.swift */,
+				263D4A3D290365F6008C03AD /* Letter.swift */,
+				2655F6B1292B7A69006C1FE4 /* ChartPoint.swift */,
+				26A2B4F829036DE4006E8232 /* words.txt */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		264AC18C28FA72CA00947F2C = {
+			isa = PBXGroup;
+			children = (
+				264AC19728FA72CA00947F2C /* Snowman */,
+				264AC19628FA72CA00947F2C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		264AC19628FA72CA00947F2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				264AC19528FA72CA00947F2C /* Snowman.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		264AC19728FA72CA00947F2C /* Snowman */ = {
+			isa = PBXGroup;
+			children = (
+				264AC19828FA72CA00947F2C /* SnowmanApp.swift */,
+				263D4A3C290364BC008C03AD /* Models */,
+				264AC1AB28FA733F00947F2C /* Views */,
+				264AC19C28FA72CB00947F2C /* Assets.xcassets */,
+				264AC1A128FA72CB00947F2C /* Snowman.entitlements */,
+				264AC19E28FA72CB00947F2C /* Preview Content */,
+			);
+			path = Snowman;
+			sourceTree = "<group>";
+		};
+		264AC19E28FA72CB00947F2C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				264AC19F28FA72CB00947F2C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		264AC1AB28FA733F00947F2C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				264AC19A28FA72CA00947F2C /* ContentView.swift */,
+				264AC1A728FA732600947F2C /* SidebarView.swift */,
+				264AC1A928FA732E00947F2C /* GameView.swift */,
+				264AC1AC28FA7A8500947F2C /* LettersView.swift */,
+				264AC1AE28FA7AF100947F2C /* GuessesView.swift */,
+				2643824D2919E15B00941347 /* SettingsView.swift */,
+				2686B6292919EBEA00D3DB3E /* Statistics */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2686B6292919EBEA00D3DB3E /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				2686B6232919EAB500D3DB3E /* StatsView.swift */,
+				2686B6252919EBC300D3DB3E /* GameStats.swift */,
+				2686B6272919EBCA00D3DB3E /* WordStats.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		264AC19428FA72CA00947F2C /* Snowman */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 264AC1A428FA72CB00947F2C /* Build configuration list for PBXNativeTarget "Snowman" */;
+			buildPhases = (
+				264AC1B028FA7C7200947F2C /* ShellScript */,
+				264AC19128FA72CA00947F2C /* Sources */,
+				264AC19228FA72CA00947F2C /* Frameworks */,
+				264AC19328FA72CA00947F2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Snowman;
+			productName = Snowman;
+			productReference = 264AC19528FA72CA00947F2C /* Snowman.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		264AC18D28FA72CA00947F2C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				ORGANIZATIONNAME = Kodeco;
+				TargetAttributes = {
+					264AC19428FA72CA00947F2C = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = 264AC19028FA72CA00947F2C /* Build configuration list for PBXProject "Snowman" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 264AC18C28FA72CA00947F2C;
+			productRefGroup = 264AC19628FA72CA00947F2C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				264AC19428FA72CA00947F2C /* Snowman */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		264AC19328FA72CA00947F2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				264AC1A028FA72CB00947F2C /* Preview Assets.xcassets in Resources */,
+				26A2B4F929036DE4006E8232 /* words.txt in Resources */,
+				264AC19D28FA72CB00947F2C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		264AC1B028FA7C7200947F2C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH=/opt/homebrew/bin:$PATH\nif [ -f ~/com.raywenderlich.swiftlint.yml ]; then\n  if which swiftlint >/dev/null; then\n    swiftlint --no-cache --config ~/com.raywenderlich.swiftlint.yml\n  fi\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		264AC19128FA72CA00947F2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				264AC1AF28FA7AF100947F2C /* GuessesView.swift in Sources */,
+				263D182E290DEF0A0091029F /* AppState.swift in Sources */,
+				263D4A3B29036494008C03AD /* GameStatus.swift in Sources */,
+				2686B6262919EBC300D3DB3E /* GameStats.swift in Sources */,
+				264AC19B28FA72CA00947F2C /* ContentView.swift in Sources */,
+				263D4A3E290365F6008C03AD /* Letter.swift in Sources */,
+				263D4A39290363D0008C03AD /* Game.swift in Sources */,
+				2686B6282919EBCA00D3DB3E /* WordStats.swift in Sources */,
+				264AC1AD28FA7A8500947F2C /* LettersView.swift in Sources */,
+				264AC19928FA72CA00947F2C /* SnowmanApp.swift in Sources */,
+				2686B6242919EAB500D3DB3E /* StatsView.swift in Sources */,
+				2655F6B2292B7A69006C1FE4 /* ChartPoint.swift in Sources */,
+				264AC1AA28FA732E00947F2C /* GameView.swift in Sources */,
+				264AC1A828FA732600947F2C /* SidebarView.swift in Sources */,
+				2643824E2919E15B00941347 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		264AC1A228FA72CB00947F2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		264AC1A328FA72CB00947F2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		264AC1A528FA72CB00947F2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Snowman/Snowman.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Snowman/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Snowman;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		264AC1A628FA72CB00947F2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Snowman/Snowman.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Snowman/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Snowman;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		264AC19028FA72CA00947F2C /* Build configuration list for PBXProject "Snowman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				264AC1A228FA72CB00947F2C /* Debug */,
+				264AC1A328FA72CB00947F2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		264AC1A428FA72CB00947F2C /* Build configuration list for PBXNativeTarget "Snowman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				264AC1A528FA72CB00947F2C /* Debug */,
+				264AC1A628FA72CB00947F2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 264AC18D28FA72CA00947F2C /* Project object */;
+}
