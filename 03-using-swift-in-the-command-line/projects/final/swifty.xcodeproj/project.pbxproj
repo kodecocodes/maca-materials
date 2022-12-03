@@ -91,6 +91,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
+				ORGANIZATIONNAME = Kodeco;
 				TargetAttributes = {
 					26E1001E28D866760090F557 = {
 						CreatedOnToolsVersion = 14.1;
