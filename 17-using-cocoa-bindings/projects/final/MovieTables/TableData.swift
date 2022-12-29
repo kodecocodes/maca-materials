@@ -1,15 +1,15 @@
-/// Copyright (c) 2022 Razeware LLC
-///
+/// Copyright (c) 2023 Kodeco Inc.
+/// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
 /// in the Software without restriction, including without limitation the rights
 /// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 /// copies of the Software, and to permit persons to whom the Software is
 /// furnished to do so, subject to the following conditions:
-///
+/// 
 /// The above copyright notice and this permission notice shall be included in
 /// all copies or substantial portions of the Software.
-///
+/// 
 /// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
 /// distribute, sublicense, create a derivative work, and/or sell copies of the
 /// Software in any work that is designed, intended, or marketed for pedagogical or
@@ -17,7 +17,7 @@
 /// or information technology.  Permission for such use, copying, modification,
 /// merger, publication, distribution, sublicensing, creation of derivative works,
 /// or sale is expressly withheld.
-///
+/// 
 /// This project and source code may use libraries or frameworks that are
 /// released under various Open-Source licenses. Use of those libraries and
 /// frameworks are governed by their own individual licenses.
@@ -32,20 +32,11 @@
 
 import AppKit
 
-extension ViewController: NSTableViewDataSource {
+extension ViewController: NSTableViewDelegate, NSTableViewDataSource {
   func numberOfRows(in tableView: NSTableView) -> Int {
     visibleMovies.count
   }
 
-  func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
-    if let sortedMovies = (visibleMovies as NSArray).sortedArray(using: moviesTableView.sortDescriptors) as? [Movie] {
-      visibleMovies = sortedMovies
-    }
-    moviesTableView.reloadData()
-  }
-}
-
-extension ViewController: NSTableViewDelegate {
   func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
     guard let columnID = tableColumn?.identifier else {
       return nil
@@ -78,43 +69,6 @@ extension ViewController: NSTableViewDelegate {
     return nil
   }
 
-  func addSortDescriptors() {
-    let titleSortDesc = NSSortDescriptor(
-      key: "title",
-      ascending: true,
-      selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))
-    let yearSortDesc = NSSortDescriptor(key: "year", ascending: true)
-    let ratingSortDesc = NSSortDescriptor(key: "rating", ascending: true)
-
-    let sortDescs = [titleSortDesc, yearSortDesc, ratingSortDesc]
-
-    for index in 0 ..< moviesTableView.numberOfColumns {
-      moviesTableView.tableColumns[index].sortDescriptorPrototype = sortDescs[index]
-    }
-  }
-
-  // MARK: - Selection
-
-  func tableViewSelectionDidChange(_ notification: Notification) {
-    let row = moviesTableView.selectedRow
-    if row < 0 || row >= visibleMovies.count {
-      clearSelectedMovie()
-      return
-    }
-
-    selectedMovie = visibleMovies[row]
-    showSelectedMovie(visibleMovies[row])
-  }
-
-
-  func clearSelectedMovie() {
-    titleLabel.stringValue = ""
-    runtimeLabel.stringValue = ""
-    genresLabel.stringValue = ""
-    principalsLabel.stringValue = ""
-    favImage.image = nil
-  }
-
   func showSelectedMovie(_ movie: Movie) {
     titleLabel.stringValue = movie.title
     runtimeLabel.stringValue = "\(movie.runTime) minutes"
@@ -124,9 +78,74 @@ extension ViewController: NSTableViewDelegate {
     let imageName = movie.isFav ? "heart.fill" : "heart"
     let color = movie.isFav ? NSColor.red : NSColor.gray
 
-    let image = NSImage(systemSymbolName: imageName, accessibilityDescription: imageName)
+    let image = NSImage(
+      systemSymbolName: imageName,
+      accessibilityDescription: imageName)
     let config = NSImage.SymbolConfiguration(paletteColors: [color])
 
-    favImage.image = image?.withSymbolConfiguration(config)
+    favButton.image = image?.withSymbolConfiguration(config)
+
+    selectedMovie = movie
+  }
+
+  func clearSelectedMovie() {
+    titleLabel.stringValue = ""
+    runtimeLabel.stringValue = ""
+    genresLabel.stringValue = ""
+    principalsLabel.stringValue = ""
+
+    favButton.image = nil
+
+    selectedMovie = nil
+  }
+
+  func tableViewSelectionDidChange(_ notification: Notification) {
+    let row = moviesTableView.selectedRow
+    if row < 0 || row >= visibleMovies.count {
+      clearSelectedMovie()
+      return
+    }
+
+    let selectedMovie = visibleMovies[row]
+    showSelectedMovie(selectedMovie)
+  }
+
+  func addSortDescriptors() {
+    let titleSortDesc = NSSortDescriptor(
+      key: "title",
+      ascending: true,
+      selector: #selector(
+        NSString.localizedCaseInsensitiveCompare(_:)))
+    let yearSortDesc = NSSortDescriptor(key: "year", ascending: true)
+    let ratingSortDesc = NSSortDescriptor(key: "rating", ascending: true)
+
+    let titleColumnID = NSUserInterfaceItemIdentifier("TitleColumn")
+    let titleColumnIndex = moviesTableView.column(withIdentifier: titleColumnID)
+    if titleColumnIndex > -1 {
+      moviesTableView.tableColumns[titleColumnIndex]
+        .sortDescriptorPrototype = titleSortDesc
+    }
+
+    let yearColumnID = NSUserInterfaceItemIdentifier("YearColumn")
+    let yearColumnIndex = moviesTableView.column(withIdentifier: yearColumnID)
+    if yearColumnIndex > -1 {
+      moviesTableView.tableColumns[yearColumnIndex]
+        .sortDescriptorPrototype = yearSortDesc
+    }
+
+    let ratingColumnID = NSUserInterfaceItemIdentifier("RatingColumn")
+    let ratingColumnIndex = moviesTableView.column(withIdentifier: ratingColumnID)
+    if ratingColumnIndex > -1 {
+      moviesTableView.tableColumns[ratingColumnIndex]
+        .sortDescriptorPrototype = ratingSortDesc
+    }
+  }
+
+  func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
+    if let sortedMovies = (visibleMovies as NSArray)
+      .sortedArray(using: moviesTableView.sortDescriptors) as? [Movie] {
+      visibleMovies = sortedMovies
+      moviesTableView.reloadData()
+    }
   }
 }

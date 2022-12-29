@@ -1,4 +1,4 @@
-/// Copyright (c) 2022 Razeware LLC
+/// Copyright (c) 2023 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -34,11 +34,9 @@ import Cocoa
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
-  func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
-    return true
-  }
-
-  func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+  func applicationShouldTerminateAfterLastWindowClosed(
+    _ sender: NSApplication
+  ) -> Bool {
     true
   }
 }

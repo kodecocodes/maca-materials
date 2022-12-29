@@ -1,4 +1,4 @@
-/// Copyright (c) 2022 Razeware LLC
+/// Copyright (c) 2023 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -33,167 +33,114 @@
 import Cocoa
 
 class ViewController: NSViewController {
-  // MARK: - UI Elements
-
   @IBOutlet weak var moviesTableView: NSTableView!
+
   @IBOutlet weak var titleLabel: NSTextField!
   @IBOutlet weak var runtimeLabel: NSTextField!
   @IBOutlet weak var genresLabel: NSTextField!
   @IBOutlet weak var principalsLabel: NSTextField!
-  @IBOutlet weak var favImage: NSImageView!
+
+  @IBOutlet weak var favButton: NSButton!
   @IBOutlet weak var statusLabel: NSTextField!
 
-  // MARK: - Properties
+  var dataStore = DataStore()
 
   var movies: [Movie] = []
   var visibleMovies: [Movie] = []
+
+  var selectedMovie: Movie?
+
   var searchText = "" {
     didSet {
-      showValidMovies()
+      searchMovies()
     }
   }
-  var selectedMovie: Movie?
-  let dataStore = DataStore()
-  var viewType = ViewType.allMovies
+
+  var viewMode = ViewMode.allMovies
   var highRatingLimit = 9.0
-
-  lazy var numFormatter: NumberFormatter = {
-    var formatter = NumberFormatter()
-    formatter.numberStyle = .decimal
-    formatter.locale = Locale.current
-    return formatter
-  }()
-
-  // MARK: - View
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     movies = dataStore.readStoredData()
+
+    visibleMovies = movies
     addSortDescriptors()
-    showValidMovies()
+    showMovieCount()
   }
 
-  func showValidMovies() {
+  @IBAction func favButtonClicked(_ sender: Any) {
+    if let selectedMovie {
+      selectedMovie.isFav.toggle()
+      showSelectedMovie(selectedMovie)
+      dataStore.saveData(movies: movies)
+    }
+  }
+
+  func searchMovies() {
     var moviesToShow = movies
-    if viewType == .favsOnly {
+    if viewMode == .favsOnly {
       moviesToShow = movies.filter { movie in
         movie.isFav
       }
-    } else if viewType == .highRating {
+    } else if viewMode == .highRating {
       moviesToShow = movies.filter { movie in
-        movie.rating > highRatingLimit
+        movie.rating >= highRatingLimit
       }
     }
 
     if searchText.isEmpty {
       visibleMovies = moviesToShow
     } else {
-      let lowercaseSearch = searchText.localizedLowercase
       visibleMovies = moviesToShow.filter { movie in
-        movie.title.localizedLowercase.contains(lowercaseSearch)
+        movie.title.localizedCaseInsensitiveContains(searchText)
       }
     }
-
     if let sortedMovies = (visibleMovies as NSArray)
       .sortedArray(using: moviesTableView.sortDescriptors) as? [Movie] {
       visibleMovies = sortedMovies
     }
 
     moviesTableView.reloadData()
-
-    //  statusLabel.stringValue = "\(visibleMovies.count) movies."
-    let numberString = numFormatter.string(for: visibleMovies.count)
-    ?? "\(visibleMovies.count)"
-    statusLabel.stringValue = "\(numberString) movies"
+    showMovieCount()
   }
 
-  func saveInBackground() {
-    DispatchQueue.global().async {
-      self.dataStore.saveData(movies: self.movies)
-    }
+  func showMovieCount() {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .decimal
+    formatter.locale = Locale.current
+
+    let numberString = formatter.string(for: visibleMovies.count)
+    ?? "\(visibleMovies.count)"
+
+    statusLabel.stringValue = "\(numberString) movies."
   }
 
   // MARK: - Menu Actions
 
-  @IBAction func toggleFavorite(_ sender: Any) {
-    if let selectedMovie {
-      selectedMovie.isFav.toggle()
-      showSelectedMovie(selectedMovie)
-      saveInBackground()
-    }
-  }
-
-  @IBAction func revertToDefaults(_ sender: Any) {
-    statusLabel.stringValue = "Reverting to default movie data…"
-    selectedMovie = nil
-    viewType = .allMovies
-    clearSelectedMovie()
-
-    DispatchQueue.global().async {
-      self.movies = self.dataStore.reloadDefaultMovies()
-      DispatchQueue.main.async {
-        self.showValidMovies()
-      }
-    }
-  }
-
   @IBAction func showAllMovies(_ sender: Any) {
-    viewType = .allMovies
-    showValidMovies()
+    viewMode = .allMovies
+    searchMovies()
   }
 
   @IBAction func showFavs(_ sender: Any) {
-    viewType = .favsOnly
-    showValidMovies()
+    viewMode = .favsOnly
+    searchMovies()
   }
 
   @IBAction func showHighRated(_ sender: Any) {
-    viewType = .highRating
-    showValidMovies()
+    viewMode = .highRating
+    searchMovies()
   }
 
   // MARK: - Contextual Menu Actions
 
-  @IBAction func showInBrowser(_ sender: Any) {
-    guard let movieToShow = clickedMovie() else {
-      return
+  func clickedMovie() -> Movie? {
+    let row = moviesTableView.clickedRow
+    if row > -1 {
+      return visibleMovies[row]
     }
-
-    let address = "https://www.imdb.com/title/\(movieToShow.id)/"
-    guard let url = URL(string: address) else {
-      return
-    }
-    NSWorkspace.shared.open(url)
-  }
-
-  @IBAction func deleteMovie(_ sender: Any) {
-    guard let movie = clickedMovie() else {
-      return
-    }
-
-    let index = movies.firstIndex {
-      $0.id == movie.id
-    }
-    guard let index = index else {
-      return
-    }
-
-    let alert = NSAlert()
-    alert.alertStyle = .warning
-    alert.messageText = "Really delete '\(movie.title)'?"
-    alert.addButton(withTitle: "Delete")
-    alert.addButton(withTitle: "Cancel")
-    let response = alert.runModal()
-    if response == .alertFirstButtonReturn {
-      selectedMovie = nil
-      clearSelectedMovie()
-
-      movies.remove(at: index)
-      showValidMovies()
-
-      saveInBackground()
-    }
+    return nil
   }
 
   @IBAction func editMovie(_ sender: Any) {
@@ -216,13 +163,14 @@ class ViewController: NSViewController {
 
     if
       let windowController = segue.destinationController as? NSWindowController,
-      let editViewController = windowController.contentViewController as? EditViewController {
+      let editViewController = windowController
+        .contentViewController as? EditViewController {
       editViewController.originalMovieData = movieData
       editViewController.parentVC = self
     }
   }
 
-  func saveMoveEdits(for movie: Movie) {
+  func saveEdits(for movie: Movie) {
     let index = movies.firstIndex {
       $0.id == movie.id
     }
@@ -233,22 +181,48 @@ class ViewController: NSViewController {
       movies.append(movie)
     }
 
-    showValidMovies()
+    searchMovies()
     if selectedMovie?.id == movie.id {
       showSelectedMovie(movie)
     }
 
-    saveInBackground()
+    dataStore.saveData(movies: movies)
   }
 
-  func clickedMovie() -> Movie? {
-    var movie = selectedMovie
-
-    let row = moviesTableView.clickedRow
-    if row >= 0 && row < visibleMovies.count {
-      movie = visibleMovies[row]
+  @IBAction func showInBrowser(_ sender: Any) {
+    guard let movie = clickedMovie() else {
+      return
     }
 
-    return movie
+    let address = "https://www.imdb.com/title/\(movie.id)/"
+    guard let url = URL(string: address) else {
+      return
+    }
+    NSWorkspace.shared.open(url)
+  }
+
+  @IBAction func deleteMovie(_ sender: Any) {
+    guard let movie = clickedMovie() else {
+      return
+    }
+
+    let alert = NSAlert()
+    alert.alertStyle = .warning
+    alert.messageText = "Really delete '\(movie.title)'?"
+
+    alert.addButton(withTitle: "Delete")
+    alert.addButton(withTitle: "Cancel")
+
+    let response = alert.runModal()
+
+    if response == .alertFirstButtonReturn {
+      movies.removeAll {
+        $0.id == movie.id
+      }
+
+      clearSelectedMovie()
+      searchMovies()
+      dataStore.saveData(movies: movies)
+    }
   }
 }
