@@ -47,8 +47,7 @@ struct LettersView: View {
             RoundedRectangle(cornerRadius: 10)
               .stroke(lineWidth: 2)
               .foregroundColor(.accentColor)
-              .padding(2)
-          )
+              .padding(2))
       }
     }
   }
