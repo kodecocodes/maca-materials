@@ -42,9 +42,8 @@ struct SettingsView: View {
       Form {
         Stepper(
           value: $minWordLength,
-          in: 3 ... Int(maxWordLength)
-        ) {
-          Text("Minimum word length: \(minWordLength)")
+          in: 3 ... Int(maxWordLength)) {
+            Text("Minimum word length: \(minWordLength)")
         }
 
         LabeledContent("Maximum word length: \(Int(maxWordLength))") {

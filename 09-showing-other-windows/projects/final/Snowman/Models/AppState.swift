@@ -43,7 +43,7 @@ class AppState: ObservableObject {
 
   init() {
     let newGame = Game(id: 1)
-    games = [ newGame ]
+    games = [newGame]
 
     gameIndex = 0
     selectedID = 1
