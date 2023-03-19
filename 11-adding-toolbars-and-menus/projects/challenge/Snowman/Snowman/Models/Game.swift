@@ -81,7 +81,8 @@ struct Game: Identifiable {
     guard
       let newGuess = letter.first?.uppercased(),
       newGuess >= "A" && newGuess <= "Z",
-      !guesses.contains(newGuess) else {
+      !guesses.contains(newGuess)
+    else {
       return
     }
 
@@ -112,7 +113,8 @@ struct Game: Identifiable {
   func getRandomWord() -> String {
     guard
       let url = Bundle.main.url(forResource: "words", withExtension: "txt"),
-      let wordsList = try? String(contentsOf: url) else {
+      let wordsList = try? String(contentsOf: url)
+    else {
       return "SNOWMAN"
     }
 
