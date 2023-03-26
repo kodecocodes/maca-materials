@@ -56,7 +56,8 @@ extension Movie {
   static func readBundleData() -> [Movie] {
     guard let fileURL = Bundle.main.url(
       forResource: "movies",
-      withExtension: "json") else {
+      withExtension: "json")
+    else {
       return []
     }
 
