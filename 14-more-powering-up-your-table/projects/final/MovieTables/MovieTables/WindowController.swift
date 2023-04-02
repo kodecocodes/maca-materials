@@ -36,7 +36,8 @@ extension NSWindowController: NSSearchFieldDelegate {
   public func controlTextDidChange(_ obj: Notification) {
     guard
       let searchField = obj.object as? NSSearchField,
-      let viewController = NSApp.keyWindow?.contentViewController as? ViewController else {
+      let viewController = NSApp.keyWindow?.contentViewController as? ViewController
+    else {
       return
     }
 

@@ -34,9 +34,11 @@ import Foundation
 
 struct DataStore {
   func readBundleData() -> [Movie] {
-    guard let fileURL = Bundle.main.url(
+    guard
+      let fileURL = Bundle.main.url(
       forResource: "movies",
-      withExtension: "json") else {
+      withExtension: "json")
+    else {
       return []
     }
 
