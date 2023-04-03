@@ -36,7 +36,8 @@ struct DataStore {
   func readBundleData() -> [Movie] {
     guard let fileURL = Bundle.main.url(
       forResource: "movies",
-      withExtension: "json") else {
+      withExtension: "json")
+    else {
       return []
     }
 
@@ -51,10 +52,11 @@ struct DataStore {
     }
   }
 
-  func saveData(movies: [Movie]) {
-    let docsFolder = URL.documentsDirectory
-    let savedDataURL = docsFolder.appending(component: "movies.json")
+  var savedDataURL: URL {
+    URL.documentsDirectory.appending(component: "movies.json")
+  }
 
+  func saveData(movies: [Movie]) {
     DispatchQueue.global().async {
       do {
         let jsonData = try JSONEncoder().encode(movies)
@@ -66,9 +68,6 @@ struct DataStore {
   }
 
   func readStoredData() -> [Movie] {
-    let docsFolder = URL.documentsDirectory
-    let savedDataURL = docsFolder.appending(component: "movies.json")
-
     do {
       let jsonData = try Data(contentsOf: savedDataURL)
       let movies = try JSONDecoder().decode([Movie].self, from: jsonData)
