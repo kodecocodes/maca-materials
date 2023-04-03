@@ -157,7 +157,8 @@ class ViewController: NSViewController {
 
     guard
       let movie = sender as? Movie,
-      let movieData = try? JSONEncoder().encode(movie) else {
+      let movieData = try? JSONEncoder().encode(movie)
+    else {
       return
     }
 
