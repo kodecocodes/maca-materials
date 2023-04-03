@@ -41,8 +41,7 @@ struct WordStats: View {
       ForEach(wordStatsPoints) { point in
         LineMark(
           x: .value("Game ID", point.name),
-          y: .value("Word Count", point.value)
-        )
+          y: .value("Word Count", point.value))
         .lineStyle(StrokeStyle(lineWidth: 4))
         .symbol(.diamond)
         .symbolSize(200)
