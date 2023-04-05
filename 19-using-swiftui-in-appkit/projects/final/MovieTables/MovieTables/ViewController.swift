@@ -56,7 +56,11 @@ class ViewController: NSViewController {
     }
   }
 
-  var viewMode = ViewMode.allMovies
+  var viewMode = ViewMode.allMovies {
+    didSet {
+      searchMovies()
+    }
+  }
   var highRatingLimit = 9.0
 
   override func viewDidLoad() {
@@ -142,17 +146,14 @@ class ViewController: NSViewController {
 
   @IBAction func showAllMovies(_ sender: Any) {
     viewMode = .allMovies
-    searchMovies()
   }
 
   @IBAction func showFavs(_ sender: Any) {
     viewMode = .favsOnly
-    searchMovies()
   }
 
   @IBAction func showHighRated(_ sender: Any) {
     viewMode = .highRating
-    searchMovies()
   }
 
   // MARK: - Contextual Menu Actions
