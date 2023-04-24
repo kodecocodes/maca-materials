@@ -69,7 +69,7 @@ struct SnowmanApp: App {
         .disabled(appState.gameHasStarted)
 
         // Challenge - part 2
-        Button("Lookup Word") {
+        Button("Look Up Word") {
           let word = appState.games[appState.gameIndex].word
           openWindow(value: word)
         }

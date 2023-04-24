@@ -61,7 +61,7 @@ struct GameView: View {
         Spacer()
 
         HStack(spacing: 60) {
-          Button("Lookup Word") {
+          Button("Look Up Word") {
             openWindow(value: game.word)
           }
 
