@@ -77,6 +77,8 @@ class ViewController: NSViewController {
     searchMovies()
     showMovieCount()
 
+    UserDefaults.standard.register(defaults: ["highRatingLimit": 9.0])
+
     NotificationCenter.default.addObserver(
       forName: UserDefaults.didChangeNotification,
       object: nil,
