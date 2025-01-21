@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2025 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -33,16 +33,16 @@
 class StockItem {
   let name: String
   var numberInStock: Int
-
+  
   init(name: String, numberInStock: Int) {
     self.name = name
     self.numberInStock = numberInStock
   }
-
+  
   func buy(number: Int) {
     numberInStock += number
   }
-
+  
   func sell(number: Int) {
     if number > numberInStock {
       numberInStock = 0
@@ -53,7 +53,6 @@ class StockItem {
 }
 
 var bananas = StockItem(name: "banana", numberInStock: 12)
-
 bananas.name
 bananas.numberInStock += 1
 bananas
@@ -73,14 +72,15 @@ let oranges = StockItem(name: "orange", numberInStock: 24)
 apples.buy(number: 16)
 oranges.sell(number: 3)
 
+
 class SoftDrinkItem: StockItem {
   var isFizzy: Bool
-
+  
   init(name: String, numberInStock: Int, isFizzy: Bool) {
     self.isFizzy = isFizzy
     super.init(name: name, numberInStock: numberInStock)
   }
-
+  
   override func buy(number: Int) {
     numberInStock += number * 12
   }
@@ -93,8 +93,8 @@ let mineralWater = SoftDrinkItem(
 
 mineralWater.sell(number: 3)
 
-// mineralWater is SoftDrinkItem
-// mineralWater is StockItem
+//  mineralWater is SoftDrinkItem
+//  mineralWater is StockItem
 
 var stocks = [bananas, apples, mineralWater]
 

@@ -1,15 +1,15 @@
-/// Copyright (c) 2023 Kodeco Inc.
-/// 
+/// Copyright (c) 2025 Kodeco Inc.
+///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
 /// in the Software without restriction, including without limitation the rights
 /// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 /// copies of the Software, and to permit persons to whom the Software is
 /// furnished to do so, subject to the following conditions:
-/// 
+///
 /// The above copyright notice and this permission notice shall be included in
 /// all copies or substantial portions of the Software.
-/// 
+///
 /// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
 /// distribute, sublicense, create a derivative work, and/or sell copies of the
 /// Software in any work that is designed, intended, or marketed for pedagogical or
@@ -17,7 +17,7 @@
 /// or information technology.  Permission for such use, copying, modification,
 /// merger, publication, distribution, sublicensing, creation of derivative works,
 /// or sale is expressly withheld.
-/// 
+///
 /// This project and source code may use libraries or frameworks that are
 /// released under various Open-Source licenses. Use of those libraries and
 /// frameworks are governed by their own individual licenses.
@@ -38,13 +38,12 @@ struct Game {
   var word = "SNOWMAN"
   var guesses: [String] = []
   var gameStatus = GameStatus.inProgress
-
+  
   var letters: [Letter] {
     var lettersArray: [Letter] = []
-
+    
     for (index, char) in word.enumerated() {
       let charString = String(char)
-
       if guesses.contains(charString) {
         let letter = Letter(id: index, char: charString)
         lettersArray.append(letter)
@@ -58,11 +57,11 @@ struct Game {
     }
     return lettersArray
   }
-
+  
   init() {
     word = getRandomWord()
   }
-
+  
   mutating func processGuess(letter: String) {
     guard
       let newGuess = letter.first?.uppercased(),
@@ -71,20 +70,20 @@ struct Game {
     else {
       return
     }
-
+    
     if !word.contains(newGuess) && incorrectGuessCount < 7 {
       incorrectGuessCount += 1
     }
     guesses.append(newGuess)
-
+    
     checkForGameOver()
   }
-
+  
   mutating func checkForGameOver() {
     let unmatchedLetters = word.filter { letter in
       !guesses.contains(String(letter))
     }
-
+    
     if unmatchedLetters.isEmpty {
       gameStatus = .won
       statusText = "HURRAY!!!! YOU WON!"
@@ -95,23 +94,23 @@ struct Game {
       statusText = "Enter another letter to guess the word."
     }
   }
-
+  
   func getRandomWord() -> String {
     guard
       let url = Bundle.main.url(forResource: "words", withExtension: "txt"),
-      let wordsList = try? String(contentsOf: url)
+      let wordsList = try? String(contentsOf: url, encoding: .utf8)
     else {
       return "SNOWMAN"
     }
-
+    
     let words = wordsList
       .components(separatedBy: .newlines)
       .filter { word in
         word.count >= 4 && word.count <= 10
       }
-
+    
     let word = words.randomElement() ?? "SNOWMAN"
-
+    
     print(word)
     return word.uppercased()
   }

@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2025 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -35,6 +35,7 @@ import SwiftUI
 struct GuessesView: View {
   @State var nextGuess = ""
   @Binding var game: Game
+
   @FocusState var entryFieldHasFocus: Bool
 
   var body: some View {
@@ -49,12 +50,12 @@ struct GuessesView: View {
           .frame(width: 50)
           .textFieldStyle(.roundedBorder)
           .disabled(game.gameStatus != .inProgress)
-          .onChange(of: nextGuess) { newValue in
+          .onChange(of: nextGuess) { _, newValue in
             game.processGuess(letter: newValue)
             nextGuess = ""
           }
           .focused($entryFieldHasFocus)
-          .onChange(of: game.gameStatus) { _ in
+          .onChange(of: game.gameStatus) {
             entryFieldHasFocus = true
           }
       }
@@ -62,8 +63,7 @@ struct GuessesView: View {
   }
 }
 
-struct GuessesView_Previews: PreviewProvider {
-  static var previews: some View {
-    GuessesView(game: .constant(Game()))
-  }
+#Preview {
+  @Previewable @State var game = Game()
+  GuessesView(game: $game)
 }

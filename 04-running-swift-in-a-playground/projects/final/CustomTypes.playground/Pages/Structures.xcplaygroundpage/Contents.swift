@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2025 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -33,11 +33,11 @@
 struct StockItem {
   let name: String
   var numberInStock: Int
-
+  
   mutating func buy(number: Int) {
     numberInStock += number
   }
-
+  
   mutating func sell(number: Int) {
     if number > numberInStock {
       numberInStock = 0
@@ -60,3 +60,4 @@ peaches.numberInStock
 
 peaches.sell(number: 1000)
 peaches.numberInStock
+

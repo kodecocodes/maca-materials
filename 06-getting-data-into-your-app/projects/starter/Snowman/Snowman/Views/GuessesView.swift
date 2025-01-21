@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2025 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -33,7 +33,7 @@
 import SwiftUI
 
 struct GuessesView: View {
-  let guesses = [ "E", "S", "R", "X"]
+  let guesses = ["E", "S", "R", "X"]
 
   var body: some View {
     VStack {
@@ -49,8 +49,6 @@ struct GuessesView: View {
   }
 }
 
-struct GuessesView_Previews: PreviewProvider {
-  static var previews: some View {
-    GuessesView()
-  }
+#Preview {
+  GuessesView()
 }

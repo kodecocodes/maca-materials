@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2025 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -117,6 +117,8 @@ repeat {
   counter += 1
 } while counter < 5
 
+print("=== FOR WITH ARRAYS ===")
+
 let toys = ["Andy", "Bo-peep", "Buzz", "Jessie", "Rex"]
 for toy in toys {
   print(toy)
@@ -187,5 +189,5 @@ func handlingOptionals(name: String?, age: Int?) {
 
 handlingOptionals(name: nil, age: nil)
 handlingOptionals(name: "Swift", age: nil)
-handlingOptionals(name: nil, age: 8)
-handlingOptionals(name: "Swift", age: 8)
+handlingOptionals(name: nil, age: 10)
+handlingOptionals(name: "Swift", age: 10)
