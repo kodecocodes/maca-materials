@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2025 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -56,9 +56,9 @@ func countEqualsFive(string: String) -> Bool {
 let filteredNames2 = names.filter(countEqualsFive)
 
 // Insert the function into the argument parentheses
-let filteredNames3 = names.filter({ name in
+let filteredNames3 = names.filter { name in
   name.count == 5
-})
+}
 
 // The shorthand $0 accesses each element as you loop
 let filteredNames4 = names.filter {
