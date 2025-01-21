@@ -34,10 +34,10 @@ import SwiftUI
 
 struct SidebarView: View {
   @Bindable var appState: AppState
-  
+
   var body: some View {
     @Bindable var appStateBindable = appState
-    
+
     List(appState.games, selection: $appState.selectedID) { game in
       VStack(alignment: .leading) {
         Text("Game \(game.id)")

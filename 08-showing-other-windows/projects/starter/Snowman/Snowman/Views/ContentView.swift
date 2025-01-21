@@ -34,7 +34,7 @@ import SwiftUI
 
 struct ContentView: View {
   let appState: AppState
-  
+
   var body: some View {
     NavigationSplitView {
       SidebarView(appState: appState)

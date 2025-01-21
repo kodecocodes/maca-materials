@@ -34,7 +34,7 @@ import SwiftUI
 
 struct LettersView: View {
   let letters: [Letter]
-  
+
   var body: some View {
     HStack {
       ForEach(letters) { letter in

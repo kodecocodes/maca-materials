@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2025 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -34,17 +34,17 @@ import SwiftUI
 
 @main
 struct SnowmanApp: App {
-  @StateObject var appState = AppState()
-
+  @State var appState = AppState()
+  
   var body: some Scene {
     WindowGroup {
       ContentView(appState: appState)
     }
-
+    
     Settings {
       SettingsView()
     }
-
+    
     Window("Statistics", id: "stats") {
       StatsView(games: appState.games)
     }

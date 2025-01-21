@@ -35,7 +35,7 @@ import SwiftUI
 @main
 struct SnowmanApp: App {
   @State var appState = AppState()
-  
+
   var body: some Scene {
     WindowGroup {
       ContentView(appState: appState)
