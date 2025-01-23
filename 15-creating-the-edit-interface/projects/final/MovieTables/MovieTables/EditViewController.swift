@@ -45,11 +45,6 @@ class EditViewController: NSViewController {
 
   weak var parentVC: ViewController?
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do view setup here.
-  }
-
   @IBAction func cancelEdits(_ sender: Any) {
     view.window?.close()
   }

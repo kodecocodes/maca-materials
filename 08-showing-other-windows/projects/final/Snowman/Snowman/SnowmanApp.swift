@@ -35,16 +35,16 @@ import SwiftUI
 @main
 struct SnowmanApp: App {
   @State var appState = AppState()
-  
+
   var body: some Scene {
     WindowGroup {
       ContentView(appState: appState)
     }
-    
+
     Settings {
       SettingsView()
     }
-    
+
     Window("Statistics", id: "stats") {
       StatsView(games: appState.games)
     }

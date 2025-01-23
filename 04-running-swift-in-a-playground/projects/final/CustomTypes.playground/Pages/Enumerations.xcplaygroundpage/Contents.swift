@@ -35,7 +35,7 @@ enum LoginState {
   case loggedOut
   case banned
   case admin
-  
+
   var displayMessage: String {
     switch self {
     case .loggedIn:

@@ -34,13 +34,13 @@ import SwiftUI
 
 struct StatsView: View {
   let games: [Game]
-  
+
   var body: some View {
     TabView {
       Tab("Games Won & Lost", systemImage: "gamecontroller") {
         GameStats(games: games)
       }
-      
+
       Tab("Length of Words", systemImage: "ruler") {
         WordStats(games: games)
       }

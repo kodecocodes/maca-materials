@@ -33,16 +33,16 @@
 class StockItem {
   let name: String
   var numberInStock: Int
-  
+
   init(name: String, numberInStock: Int) {
     self.name = name
     self.numberInStock = numberInStock
   }
-  
+
   func buy(number: Int) {
     numberInStock += number
   }
-  
+
   func sell(number: Int) {
     if number > numberInStock {
       numberInStock = 0
@@ -75,12 +75,12 @@ oranges.sell(number: 3)
 
 class SoftDrinkItem: StockItem {
   var isFizzy: Bool
-  
+
   init(name: String, numberInStock: Int, isFizzy: Bool) {
     self.isFizzy = isFizzy
     super.init(name: name, numberInStock: numberInStock)
   }
-  
+
   override func buy(number: Int) {
     numberInStock += number * 12
   }

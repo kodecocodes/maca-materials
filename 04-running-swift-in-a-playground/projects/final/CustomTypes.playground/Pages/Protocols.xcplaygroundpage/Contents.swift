@@ -33,7 +33,7 @@
 protocol StockItemProtocol {
   var name: String { get }
   var numberInStock: Int { get set }
-  
+
   mutating func buy(number: Int)
   mutating func sell(number: Int)
 }
@@ -54,7 +54,7 @@ struct SoftDrinkItem: StockItemProtocol {
   var name: String
   var numberInStock: Int
   var isFizzy: Bool
-  
+
   mutating func buy(number: Int) {
     numberInStock += number * 12
   }
@@ -72,7 +72,7 @@ extension StockItemProtocol {
   mutating func buy(number: Int) {
     numberInStock += number
   }
-  
+
   mutating func sell(number: Int) {
     numberInStock -= number
   }

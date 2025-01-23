@@ -33,11 +33,11 @@
 struct StockItem {
   let name: String
   var numberInStock: Int
-  
+
   mutating func buy(number: Int) {
     numberInStock += number
   }
-  
+
   mutating func sell(number: Int) {
     if number > numberInStock {
       numberInStock = 0
@@ -60,4 +60,3 @@ peaches.numberInStock
 
 peaches.sell(number: 1000)
 peaches.numberInStock
-

@@ -34,20 +34,20 @@ import SwiftUI
 
 struct WordStats: View {
   let games: [Game]
-  
+
   var wordCountReport: String {
     let completedGames = games.filter {
       $0.gameStatus != .inProgress
     }
-    
+
     let gameReports = completedGames.map { game in
       let statusText = game.gameStatus == .won ? "won" : "lost"
       return "\(game.id): \(game.word.count) letters - \(statusText)"
     }
-    
+
     return gameReports.joined(separator: "\n")
   }
-  
+
   var body: some View {
     Text(wordCountReport)
   }
