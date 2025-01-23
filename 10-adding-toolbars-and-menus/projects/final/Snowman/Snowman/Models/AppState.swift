@@ -42,32 +42,32 @@ class AppState {
     }
   }
   var bossMode = false
-  
+
   init() {
     let newGame = Game(id: 1)
     games = [newGame]
-    
+
     gameIndex = 0
     selectedID = 1
   }
-  
+
   var gameHasStarted: Bool {
     !games[gameIndex].guesses.isEmpty
   }
-  
+
   func startNewGame() {
     let newGame = Game(id: games.count + 1)
     games.append(newGame)
-    
+
     selectedID = newGame.id
     gameIndex = games.count - 1
   }
-  
+
   func selectGame(id: Int?) {
     guard let id else {
       return
     }
-    
+
     let gameLocation = games.firstIndex { game in
       game.id == id
     }
@@ -75,7 +75,7 @@ class AppState {
       gameIndex = gameLocation
     }
   }
-  
+
   func getDifferentWord() {
     games[gameIndex].chooseNewWord()
   }

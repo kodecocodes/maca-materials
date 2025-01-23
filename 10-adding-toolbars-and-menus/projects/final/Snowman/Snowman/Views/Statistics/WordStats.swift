@@ -35,34 +35,34 @@ import Charts
 
 struct WordStats: View {
   let games: [Game]
-  
+
   var wordCountReport: String {
     let completedGames = games.filter {
       $0.gameStatus != .inProgress
     }
-    
+
     let gameReports = completedGames.map { game in
       let statusText = game.gameStatus == .won ? "won" : "lost"
       return "\(game.id): \(game.word.count) letters - \(statusText)"
     }
-    
+
     return gameReports.joined(separator: "\n")
   }
-  
+
   var wordStatsPoints: [ChartPoint] {
     let completedGames = games.filter { game in
       game.gameStatus != .inProgress
     }
-    
+
     let chartPoints = completedGames.map { game in
       ChartPoint(
         name: "#\(game.id)",
         value: game.word.count)
     }
-    
+
     return chartPoints
   }
-  
+
   var lineChartColor: Color {
     let wonGamesCount = games.count {
       $0.gameStatus == .won
@@ -70,16 +70,16 @@ struct WordStats: View {
     let lostGamesCount = games.count {
       $0.gameStatus == .lost
     }
-    
+
     if wonGamesCount > lostGamesCount {
       return .green
     } else if wonGamesCount < lostGamesCount {
       return .orange
     }
-    
+
     return .blue
   }
-  
+
   var body: some View {
     Chart {
       ForEach(wordStatsPoints) { point in
@@ -94,7 +94,7 @@ struct WordStats: View {
         .accessibilityValue("Game \(point.name)")
         .accessibilityLabel("had \(point.value) letters in the word")
       }
-      
+
       RuleMark(y: .value("Average", 7.5))
     }
     .chartYScale(domain: .automatic(includesZero: false))

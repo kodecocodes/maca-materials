@@ -35,7 +35,7 @@ import Charts
 
 struct GameStats: View {
   let games: [Game]
-  
+
   var gameReport: String {
     let wonGamesCount = games.count {
       $0.gameStatus == .won
@@ -43,13 +43,13 @@ struct GameStats: View {
     let lostGamesCount = games.count {
       $0.gameStatus == .lost
     }
-    
+
     return """
     Games won: \(wonGamesCount)
     Games lost: \(lostGamesCount)
     """
   }
-  
+
   var gameStatsPoints: [ChartPoint] {
     let wonGamesCount = games.count {
       $0.gameStatus == .won
@@ -57,15 +57,15 @@ struct GameStats: View {
     let lostGamesCount = games.count {
       $0.gameStatus == .lost
     }
-    
+
     let chartPoints = [
       ChartPoint(name: "Wins", value: wonGamesCount),
       ChartPoint(name: "Losses", value: lostGamesCount)
     ]
-    
+
     return chartPoints
   }
-  
+
   var body: some View {
     Chart(gameStatsPoints) { point in
       BarMark(
@@ -79,7 +79,7 @@ struct GameStats: View {
         spacing: 20) {
           Text("\(point.name): \(point.value)")
             .font(.title2)
-        }
+      }
     }
     .chartForegroundStyleScale([
       "Wins": Color.green.gradient,

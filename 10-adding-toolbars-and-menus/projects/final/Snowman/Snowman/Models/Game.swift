@@ -39,14 +39,14 @@ struct Game: Identifiable {
   var word = "SNOWMAN"
   var guesses: [String] = []
   var gameStatus = GameStatus.inProgress
-  
+
   @AppStorage("minWordLength") var minWordLength = 4
   @AppStorage("maxWordLength") var maxWordLength = 10
   @AppStorage("useProperNouns") var useProperNouns = false
-  
+
   var letters: [Letter] {
     var lettersArray: [Letter] = []
-    
+
     for (index, char) in word.enumerated() {
       let charString = String(char)
       if guesses.contains(charString) {
@@ -62,19 +62,19 @@ struct Game: Identifiable {
     }
     return lettersArray
   }
-  
+
   var sidebarWord: String {
     if gameStatus == .inProgress {
       return "???"
     }
     return word
   }
-  
+
   init(id: Int) {
     self.id = id
     word = getRandomWord()
   }
-  
+
   mutating func processGuess(letter: String) {
     guard
       let newGuess = letter.first?.uppercased(),
@@ -83,20 +83,20 @@ struct Game: Identifiable {
     else {
       return
     }
-    
+
     if !word.contains(newGuess) && incorrectGuessCount < 7 {
       incorrectGuessCount += 1
     }
     guesses.append(newGuess)
-    
+
     checkForGameOver()
   }
-  
+
   mutating func checkForGameOver() {
     let unmatchedLetters = word.filter { letter in
       !guesses.contains(String(letter))
     }
-    
+
     if unmatchedLetters.isEmpty {
       gameStatus = .won
       statusText = "HURRAY!!!! YOU WON!"
@@ -107,7 +107,7 @@ struct Game: Identifiable {
       statusText = "Enter another letter to guess the word."
     }
   }
-  
+
   func getRandomWord() -> String {
     guard
       let url = Bundle.main.url(forResource: "words", withExtension: "txt"),
@@ -115,11 +115,11 @@ struct Game: Identifiable {
     else {
       return "SNOWMAN"
     }
-    
+
     let storedMinWordLength = minWordLength
     let storedMaxWordLength = maxWordLength
     let storedUseProperNouns = useProperNouns
-    
+
     let words =
     wordsList
       .components(separatedBy: .newlines)
@@ -133,13 +133,13 @@ struct Game: Identifiable {
         let firstLetter = word[word.startIndex]
         return !firstLetter.isUppercase
       }
-    
+
     let word = words.randomElement() ?? "SNOWMAN"
-    
+
     print(word)
     return word.uppercased()
   }
-  
+
   mutating func chooseNewWord() {
     word = getRandomWord()
   }
@@ -150,15 +150,15 @@ extension Game {
     var game1 = Game(id: 1)
     game1.word = "SNOWMAN"
     game1.gameStatus = .lost
-    
+
     var game2 = Game(id: 2)
     game2.word = "FROST"
     game2.gameStatus = .won
-    
+
     var game3 = Game(id: 3)
     game3.word = "ANTARCTICA"
     game3.gameStatus = .lost
-    
+
     return [game1, game2, game3]
   }
 }
