@@ -34,7 +34,7 @@ import SwiftUI
 
 struct GameStats: View {
   let games: [Game]
-  
+
   var gameReport: String {
     let wonGamesCount = games.count {
       $0.gameStatus == .won
@@ -42,13 +42,13 @@ struct GameStats: View {
     let lostGamesCount = games.count {
       $0.gameStatus == .lost
     }
-    
+
     return """
     Games won: \(wonGamesCount)
     Games lost: \(lostGamesCount)
     """
   }
-  
+
   var body: some View {
     Text(gameReport)
   }

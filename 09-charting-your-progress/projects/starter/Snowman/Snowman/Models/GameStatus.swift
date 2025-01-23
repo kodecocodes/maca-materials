@@ -36,7 +36,7 @@ enum GameStatus {
   case won
   case lost
   case inProgress
-  
+
   var displayStatus: Text {
     switch self {
     case .inProgress:
@@ -49,7 +49,7 @@ enum GameStatus {
       return Text("You won! \(img)")
     }
   }
-  
+
   var statusTextColor: Color {
     switch self {
     case .inProgress:

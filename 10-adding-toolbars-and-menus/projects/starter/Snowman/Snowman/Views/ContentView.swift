@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2025 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -33,7 +33,7 @@
 import SwiftUI
 
 struct ContentView: View {
-  @ObservedObject var appState: AppState
+  let appState: AppState
 
   var body: some View {
     NavigationSplitView {
@@ -41,12 +41,10 @@ struct ContentView: View {
     } detail: {
       GameView(appState: appState)
     }
-    .frame(minWidth: 1100, minHeight: 500)
+    .frame(minWidth: 1100)
   }
 }
 
-struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView(appState: AppState())
-  }
+#Preview {
+  ContentView(appState: AppState())
 }

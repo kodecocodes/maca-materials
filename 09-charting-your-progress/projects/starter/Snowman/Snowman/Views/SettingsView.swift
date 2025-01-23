@@ -36,7 +36,7 @@ struct SettingsView: View {
   @AppStorage("minWordLength") var minWordLength = 4
   @AppStorage("maxWordLength") var maxWordLength = 10.0
   @AppStorage("useProperNouns") var useProperNouns = false
-  
+
   var body: some View {
     TabView {
       Tab("Settings", systemImage: "snowflake") {
@@ -47,11 +47,11 @@ struct SettingsView: View {
           ) {
             Text("Minimum word length: \(minWordLength)")
           }
-          
+
           LabeledContent("Maximum word length: \(Int(maxWordLength))") {
             Slider(value: $maxWordLength, in: Double(minWordLength) ... 12)
           }
-          
+
           Toggle("Allow proper nouns", isOn: $useProperNouns)
             .toggleStyle(.switch)
         }

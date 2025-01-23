@@ -54,5 +54,5 @@ struct WordStats: View {
 }
 
 #Preview {
-  GameStats(games: [])
+  WordStats(games: [])
 }
