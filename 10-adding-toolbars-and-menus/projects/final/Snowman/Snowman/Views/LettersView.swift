@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2025 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -34,7 +34,7 @@ import SwiftUI
 
 struct LettersView: View {
   let letters: [Letter]
-
+  
   var body: some View {
     HStack {
       ForEach(letters) { letter in
@@ -53,8 +53,6 @@ struct LettersView: View {
   }
 }
 
-struct LettersView_Previews: PreviewProvider {
-  static var previews: some View {
-    LettersView(letters: Game(id: 1).letters)
-  }
+#Preview {
+  LettersView(letters: Game(id: 1).letters)
 }

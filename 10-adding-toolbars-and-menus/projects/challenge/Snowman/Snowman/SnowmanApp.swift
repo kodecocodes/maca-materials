@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2023 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -34,11 +34,37 @@ import SwiftUI
 
 @main
 struct SnowmanApp: App {
-  @State var appState = AppState()
+  @StateObject var appState = AppState()
 
   var body: some Scene {
     WindowGroup {
       ContentView(appState: appState)
+    }
+    .commands {
+      SidebarCommands()
+      ToolbarCommands()
+
+      CommandGroup(replacing: .newItem) {
+        Button("New Game") {
+          appState.startNewGame()
+        }
+        .keyboardShortcut("n")
+      }
+
+      CommandGroup(replacing: .help) {
+        EmptyView()
+      }
+
+      CommandMenu("Game") {
+        Toggle("Boss Mode", isOn: $appState.bossMode)
+          .keyboardShortcut("b")
+
+        Button("Different Word") {
+          appState.getDifferentWord()
+        }
+        .keyboardShortcut("d")
+        .disabled(appState.gameHasStarted)
+      }
     }
 
     Settings {

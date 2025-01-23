@@ -1,15 +1,15 @@
-/// Copyright (c) 2023 Kodeco Inc.
-/// 
+/// Copyright (c) 2025 Kodeco Inc.
+///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
 /// in the Software without restriction, including without limitation the rights
 /// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 /// copies of the Software, and to permit persons to whom the Software is
 /// furnished to do so, subject to the following conditions:
-/// 
+///
 /// The above copyright notice and this permission notice shall be included in
 /// all copies or substantial portions of the Software.
-/// 
+///
 /// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
 /// distribute, sublicense, create a derivative work, and/or sell copies of the
 /// Software in any work that is designed, intended, or marketed for pedagogical or
@@ -17,7 +17,7 @@
 /// or information technology.  Permission for such use, copying, modification,
 /// merger, publication, distribution, sublicensing, creation of derivative works,
 /// or sale is expressly withheld.
-/// 
+///
 /// This project and source code may use libraries or frameworks that are
 /// released under various Open-Source licenses. Use of those libraries and
 /// frameworks are governed by their own individual licenses.
@@ -32,37 +32,42 @@
 
 import SwiftUI
 
-class AppState: ObservableObject {
-  @Published var games: [Game]
-  @Published var gameIndex: Int
-  @Published var selectedID: Int? {
+@Observable
+class AppState {
+  var games: [Game]
+  var gameIndex: Int
+  var selectedID: Int? {
     didSet {
       selectGame(id: selectedID)
     }
   }
-  @Published var bossMode = false
-
+  var bossMode = false
+  
   init() {
     let newGame = Game(id: 1)
     games = [newGame]
-
+    
     gameIndex = 0
     selectedID = 1
   }
-
+  
+  var gameHasStarted: Bool {
+    !games[gameIndex].guesses.isEmpty
+  }
+  
   func startNewGame() {
     let newGame = Game(id: games.count + 1)
     games.append(newGame)
-
+    
     selectedID = newGame.id
     gameIndex = games.count - 1
   }
-
+  
   func selectGame(id: Int?) {
     guard let id else {
       return
     }
-
+    
     let gameLocation = games.firstIndex { game in
       game.id == id
     }
@@ -70,11 +75,7 @@ class AppState: ObservableObject {
       gameIndex = gameLocation
     }
   }
-
-  var gameHasStarted: Bool {
-    !games[gameIndex].guesses.isEmpty
-  }
-
+  
   func getDifferentWord() {
     games[gameIndex].chooseNewWord()
   }

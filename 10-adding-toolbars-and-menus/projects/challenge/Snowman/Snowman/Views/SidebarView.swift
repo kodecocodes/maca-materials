@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2023 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -33,11 +33,9 @@
 import SwiftUI
 
 struct SidebarView: View {
-  @Bindable var appState: AppState
+  @ObservedObject var appState: AppState
 
   var body: some View {
-    @Bindable var appStateBindable = appState
-
     List(appState.games, selection: $appState.selectedID) { game in
       VStack(alignment: .leading) {
         Text("Game \(game.id)")
@@ -47,10 +45,13 @@ struct SidebarView: View {
       }
       .padding(.vertical)
       .foregroundColor(game.gameStatus.statusTextColor)
+      .tag(game.id)
     }
   }
 }
 
-#Preview {
-  SidebarView(appState: AppState())
+struct SidebarView_Previews: PreviewProvider {
+  static var previews: some View {
+    SidebarView(appState: AppState())
+  }
 }
