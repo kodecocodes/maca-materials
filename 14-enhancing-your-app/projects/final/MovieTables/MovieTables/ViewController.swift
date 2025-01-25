@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2025 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -39,17 +39,13 @@ class ViewController: NSViewController {
   @IBOutlet weak var runtimeLabel: NSTextField!
   @IBOutlet weak var genresLabel: NSTextField!
   @IBOutlet weak var principalsLabel: NSTextField!
-
   @IBOutlet weak var favButton: NSButton!
   @IBOutlet weak var statusLabel: NSTextField!
 
-  var dataStore = DataStore()
-
   var movies: [Movie] = []
   var visibleMovies: [Movie] = []
-
+  var dataStore = DataStore()
   var selectedMovie: Movie?
-
   var searchText = "" {
     didSet {
       searchMovies()
@@ -67,8 +63,8 @@ class ViewController: NSViewController {
     super.viewDidLoad()
 
     movies = dataStore.readStoredData()
-
     visibleMovies = movies
+
     addSortDescriptors()
     showMovieCount()
   }
@@ -100,6 +96,7 @@ class ViewController: NSViewController {
         movie.title.localizedCaseInsensitiveContains(searchText)
       }
     }
+
     if let sortedMovies = (visibleMovies as NSArray)
       .sortedArray(using: moviesTableView.sortDescriptors) as? [Movie] {
       visibleMovies = sortedMovies
