@@ -16,7 +16,7 @@
 /// instructional purposes related to programming, coding, application development,
 /// or information technology.  Permission for such use, copying, modification,
 /// merger, publication, distribution, sublicensing, creation of derivative works,
-/// or sale is expressly withheld.
+/// or sale is expressly withheld./Users/sarah/Kodeco books/MA book/Local 2/dev2/Snowman/Snowman/SnowmanApp.swift
 ///
 /// This project and source code may use libraries or frameworks that are
 /// released under various Open-Source licenses. Use of those libraries and
@@ -32,46 +32,64 @@
 
 import SwiftUI
 
-struct GuessesView: View {
-  @State var nextGuess = ""
-  @Binding var game: Game
+@main
+struct SnowmanApp: App {
+  @State var appState = AppState()
 
-  var body: some View {
-    VStack {
-      HStack {
-        Text("Letters used:")
-        Text(game.guesses.joined(separator: ", "))
+  // Challenge - part 1
+  @Environment(\.openWindow) var openWindow
+
+  var body: some Scene {
+    WindowGroup {
+      ContentView(appState: appState)
+    }
+    .commands {
+      SidebarCommands()
+      ToolbarCommands()
+
+      CommandGroup(replacing: .newItem) {
+        Button("New Game") {
+          appState.startNewGame()
+        }
+        .keyboardShortcut("n")
+      }
+
+      CommandGroup(replacing: .help) {
+        EmptyView()
+      }
+
+      CommandMenu("Game") {
+        Toggle("Boss Mode", isOn: $appState.bossMode)
+          .keyboardShortcut("b")
+
+        Button("Different Word") {
+          appState.getDifferentWord()
+        }
+        .keyboardShortcut("d")
+        .disabled(appState.gameHasStarted)
+
+        // Challenge - part 2
+        Button("Look Up Word") {
+          let word = appState.games[appState.gameIndex].word
+          openWindow(value: word)
+        }
+        .keyboardShortcut("l")
+        .disabled(appState.games[appState.gameIndex].gameStatus == .inProgress)
       }
     }
-    .onAppear(perform: startMonitoringKeystrokes)
-    .onChange(of: nextGuess) {
-      if game.gameStatus == .inProgress {
-        game.processGuess(letter: nextGuess)
-      }
-      nextGuess = ""
+
+    Settings {
+      SettingsView()
     }
+
+    Window("Statistics", id: "stats") {
+      StatsView(games: appState.games)
+    }
+    .keyboardShortcut("t", modifiers: .command)
+
+    WindowGroup(for: String.self) { $word in
+      LookupView(word: word ?? "snowman")
+    }
+    .defaultSize(width: 1000, height: 800)
   }
-
-  func startMonitoringKeystrokes() {
-    NSEvent.addLocalMonitorForEvents(matching: .keyUp) { event in
-      if event.modifierFlags.contains(.command) {
-        return event
-      }
-
-      guard let key = event.characters(byApplyingModifiers: .shift) else {
-        return event
-      }
-
-      if key >= "A" && key <= "Z" {
-        nextGuess = key
-      }
-
-      return event
-    }
-  }
-}
-
-#Preview {
-  @Previewable @State var game = Game(id: 1)
-  GuessesView(game: $game)
 }
