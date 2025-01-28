@@ -38,27 +38,20 @@ struct SettingsView: View {
 
   var body: some View {
     VStack(alignment: .leading, spacing: 30) {
-      // 2
       Picker("Default View Mode:", selection: $defaultViewMode) {
-        // 3
         Text("All Movies").tag(ViewMode.allMovies)
         Text("Favorites Only").tag(ViewMode.favsOnly)
         Text("Highest Rated").tag(ViewMode.highRating)
       }
-      // 4
       .pickerStyle(.radioGroup)
 
-      // 5
       Slider(value: $highRatingLimit, in: 7.5 ... 10.0) {
-        // 6
         HStack {
           Text("High Rating Limit:")
-          // 7
           Text(highRatingLimit, format: .number.precision(.fractionLength(1)))
         }
       }
     }
-    // 8
     .frame(width: 300, height: 120)
     .padding()
   }

@@ -33,13 +33,11 @@
 import Foundation
 
 class Principal: Codable {
-  // 2
   let id: String
   var name: String
   var category: String
   var roles: String
 
-  // 3
   var display: String {
     if roles.isEmpty {
       return "\(name): \(category)"

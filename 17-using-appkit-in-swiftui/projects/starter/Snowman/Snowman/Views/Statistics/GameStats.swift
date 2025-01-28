@@ -70,8 +70,7 @@ struct GameStats: View {
     Chart(gameStatsPoints) { point in
       BarMark(
         x: .value("Name", point.name),
-        y: .value("Count", point.value)
-      )
+        y: .value("Count", point.value))
       .foregroundStyle(by: .value("Name", point.name))
       .annotation(
         position: .overlay,

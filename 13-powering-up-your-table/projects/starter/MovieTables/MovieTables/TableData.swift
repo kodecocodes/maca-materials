@@ -100,14 +100,11 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource {
 
   func tableViewSelectionDidChange(_ notification: Notification) {
     let row = moviesTableView.selectedRow
-    // 2
     if row < 0 || row >= movies.count {
-      // 3
       clearSelectedMovie()
       return
     }
 
-    // 4
     let selectedMovie = movies[row]
     showSelectedMovie(selectedMovie)
   }
