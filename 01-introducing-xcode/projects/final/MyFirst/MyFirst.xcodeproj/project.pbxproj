@@ -3,29 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		CDF893D228D2FA6C0067CAD2 /* MyFirstApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF893D128D2FA6C0067CAD2 /* MyFirstApp.swift */; };
-		CDF893D428D2FA6C0067CAD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF893D328D2FA6C0067CAD2 /* ContentView.swift */; };
-		CDF893D628D2FA6D0067CAD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF893D528D2FA6D0067CAD2 /* Assets.xcassets */; };
-		CDF893D928D2FA6D0067CAD2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF893D828D2FA6D0067CAD2 /* Preview Assets.xcassets */; };
-		CDF893E128D3066F0067CAD2 /* ByeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF893E028D3066F0067CAD2 /* ByeView.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-		CDF893CE28D2FA6C0067CAD2 /* MyFirst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirst.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDF893D128D2FA6C0067CAD2 /* MyFirstApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFirstApp.swift; sourceTree = "<group>"; };
-		CDF893D328D2FA6C0067CAD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		CDF893D528D2FA6D0067CAD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CDF893D828D2FA6D0067CAD2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CDF893DA28D2FA6D0067CAD2 /* MyFirst.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyFirst.entitlements; sourceTree = "<group>"; };
-		CDF893E028D3066F0067CAD2 /* ByeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByeView.swift; sourceTree = "<group>"; };
+		CD679E3D2D4B728A009EA746 /* MyFirst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirst.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CD679E3F2D4B728A009EA746 /* MyFirst */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MyFirst;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
-		CDF893CB28D2FA6C0067CAD2 /* Frameworks */ = {
+		CD679E3A2D4B728A009EA746 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,150 +29,107 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CDF893C528D2FA6C0067CAD2 = {
+		CD679E342D4B728A009EA746 = {
 			isa = PBXGroup;
 			children = (
-				CDF893D028D2FA6C0067CAD2 /* MyFirst */,
-				CDF893CF28D2FA6C0067CAD2 /* Products */,
+				CD679E3F2D4B728A009EA746 /* MyFirst */,
+				CD679E3E2D4B728A009EA746 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		CDF893CF28D2FA6C0067CAD2 /* Products */ = {
+		CD679E3E2D4B728A009EA746 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CDF893CE28D2FA6C0067CAD2 /* MyFirst.app */,
+				CD679E3D2D4B728A009EA746 /* MyFirst.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		CDF893D028D2FA6C0067CAD2 /* MyFirst */ = {
-			isa = PBXGroup;
-			children = (
-				CDF893D128D2FA6C0067CAD2 /* MyFirstApp.swift */,
-				CDF893D328D2FA6C0067CAD2 /* ContentView.swift */,
-				CDF893E028D3066F0067CAD2 /* ByeView.swift */,
-				CDF893D528D2FA6D0067CAD2 /* Assets.xcassets */,
-				CDF893DA28D2FA6D0067CAD2 /* MyFirst.entitlements */,
-				CDF893D728D2FA6D0067CAD2 /* Preview Content */,
-			);
-			path = MyFirst;
-			sourceTree = "<group>";
-		};
-		CDF893D728D2FA6D0067CAD2 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				CDF893D828D2FA6D0067CAD2 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CDF893CD28D2FA6C0067CAD2 /* MyFirst */ = {
+		CD679E3C2D4B728A009EA746 /* MyFirst */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDF893DD28D2FA6D0067CAD2 /* Build configuration list for PBXNativeTarget "MyFirst" */;
+			buildConfigurationList = CD679E4C2D4B728C009EA746 /* Build configuration list for PBXNativeTarget "MyFirst" */;
 			buildPhases = (
-				CDF893CA28D2FA6C0067CAD2 /* Sources */,
-				CDF893CB28D2FA6C0067CAD2 /* Frameworks */,
-				CDF893CC28D2FA6C0067CAD2 /* Resources */,
-				CDF893E428D3F3310067CAD2 /* SwiftLint */,
+				CD679E392D4B728A009EA746 /* Sources */,
+				CD679E3A2D4B728A009EA746 /* Frameworks */,
+				CD679E3B2D4B728A009EA746 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				CD679E3F2D4B728A009EA746 /* MyFirst */,
+			);
 			name = MyFirst;
+			packageProductDependencies = (
+			);
 			productName = MyFirst;
-			productReference = CDF893CE28D2FA6C0067CAD2 /* MyFirst.app */;
+			productReference = CD679E3D2D4B728A009EA746 /* MyFirst.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CDF893C628D2FA6C0067CAD2 /* Project object */ = {
+		CD679E352D4B728A009EA746 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
-				ORGANIZATIONNAME = Kodeco;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					CDF893CD28D2FA6C0067CAD2 = {
-						CreatedOnToolsVersion = 14.1;
+					CD679E3C2D4B728A009EA746 = {
+						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = CDF893C928D2FA6C0067CAD2 /* Build configuration list for PBXProject "MyFirst" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = CD679E382D4B728A009EA746 /* Build configuration list for PBXProject "MyFirst" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = CDF893C528D2FA6C0067CAD2;
-			productRefGroup = CDF893CF28D2FA6C0067CAD2 /* Products */;
+			mainGroup = CD679E342D4B728A009EA746;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = CD679E3E2D4B728A009EA746 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CDF893CD28D2FA6C0067CAD2 /* MyFirst */,
+				CD679E3C2D4B728A009EA746 /* MyFirst */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CDF893CC28D2FA6C0067CAD2 /* Resources */ = {
+		CD679E3B2D4B728A009EA746 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDF893D928D2FA6D0067CAD2 /* Preview Assets.xcassets in Resources */,
-				CDF893D628D2FA6D0067CAD2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		CDF893E428D3F3310067CAD2 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "PATH=/opt/homebrew/bin:$PATH\nif [ -f ~/com.raywenderlich.swiftlint.yml ]; then\n  if which swiftlint >/dev/null; then\n    swiftlint --no-cache --config ~/com.raywenderlich.swiftlint.yml\n  fi\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		CDF893CA28D2FA6C0067CAD2 /* Sources */ = {
+		CD679E392D4B728A009EA746 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDF893E128D3066F0067CAD2 /* ByeView.swift in Sources */,
-				CDF893D428D2FA6C0067CAD2 /* ContentView.swift in Sources */,
-				CDF893D228D2FA6C0067CAD2 /* MyFirstApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		CDF893DB28D2FA6D0067CAD2 /* Debug */ = {
+		CD679E4A2D4B728C009EA746 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -211,7 +162,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -225,20 +177,22 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		CDF893DC28D2FA6D0067CAD2 /* Release */ = {
+		CD679E4B2D4B728C009EA746 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -271,7 +225,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -279,21 +234,20 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
-		CDF893DE28D2FA6D0067CAD2 /* Debug */ = {
+		CD679E4D2D4B728C009EA746 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = MyFirst/MyFirst.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -314,12 +268,11 @@
 			};
 			name = Debug;
 		};
-		CDF893DF28D2FA6D0067CAD2 /* Release */ = {
+		CD679E4E2D4B728C009EA746 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = MyFirst/MyFirst.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -343,25 +296,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CDF893C928D2FA6C0067CAD2 /* Build configuration list for PBXProject "MyFirst" */ = {
+		CD679E382D4B728A009EA746 /* Build configuration list for PBXProject "MyFirst" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CDF893DB28D2FA6D0067CAD2 /* Debug */,
-				CDF893DC28D2FA6D0067CAD2 /* Release */,
+				CD679E4A2D4B728C009EA746 /* Debug */,
+				CD679E4B2D4B728C009EA746 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDF893DD28D2FA6D0067CAD2 /* Build configuration list for PBXNativeTarget "MyFirst" */ = {
+		CD679E4C2D4B728C009EA746 /* Build configuration list for PBXNativeTarget "MyFirst" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CDF893DE28D2FA6D0067CAD2 /* Debug */,
-				CDF893DF28D2FA6D0067CAD2 /* Release */,
+				CD679E4D2D4B728C009EA746 /* Debug */,
+				CD679E4E2D4B728C009EA746 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CDF893C628D2FA6C0067CAD2 /* Project object */;
+	rootObject = CD679E352D4B728A009EA746 /* Project object */;
 }
