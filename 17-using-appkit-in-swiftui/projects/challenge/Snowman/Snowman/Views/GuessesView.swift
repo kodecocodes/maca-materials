@@ -53,12 +53,12 @@ struct GuessesView: View {
   }
 
   func startMonitoringKeystrokes() {
-    NSEvent.addLocalMonitorForEvents(matching: .keyUp) { event in
-      if event.modifierFlags.contains(.command) {
+    NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
+      guard let key = event.characters(byApplyingModifiers: .shift) else {
         return event
       }
 
-      guard let key = event.characters(byApplyingModifiers: .shift) else {
+      if event.modifierFlags.contains(.command) {
         return event
       }
 
