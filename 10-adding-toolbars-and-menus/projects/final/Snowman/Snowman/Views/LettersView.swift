@@ -46,7 +46,7 @@ struct LettersView: View {
           .overlay(
             RoundedRectangle(cornerRadius: 10)
               .stroke(lineWidth: 2)
-              .foregroundColor(letter.color)
+              .foregroundStyle(letter.color)
               .padding(2))
       }
     }

@@ -46,7 +46,7 @@ struct SidebarView: View {
         game.gameStatus.displayStatus
       }
       .padding(.vertical)
-      .foregroundColor(game.gameStatus.statusTextColor)
+      .foregroundStyle(game.gameStatus.statusTextColor)
     }
   }
 }

@@ -46,7 +46,7 @@ struct RatingView: View {
       ladybugImage.symbolVariant(rating >= 10 ? .fill : .none)
     }
     .font(.title3)
-    .foregroundColor(.secondary)
+    .foregroundStyle(.secondary)
   }
 }
 

@@ -53,7 +53,7 @@ struct GameView: View {
 
         Text(game.statusText)
           .font(.title2)
-          .foregroundColor(game.gameStatus.statusTextColor)
+          .foregroundStyle(game.gameStatus.statusTextColor)
 
         LettersView(letters: game.letters)
 
