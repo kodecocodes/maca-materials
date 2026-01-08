@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -53,18 +53,14 @@ class StockItem {
 }
 
 var bananas = StockItem(name: "banana", numberInStock: 12)
+
 bananas.name
 bananas.numberInStock += 1
 bananas
 
 bananas.buy(number: 4)
-bananas.numberInStock
-
 bananas.sell(number: 2)
-bananas.numberInStock
-
 bananas.sell(number: 1000)
-bananas.numberInStock
 
 let apples = StockItem(name: "apple", numberInStock: 0)
 let oranges = StockItem(name: "orange", numberInStock: 24)
@@ -72,6 +68,7 @@ let oranges = StockItem(name: "orange", numberInStock: 24)
 apples.buy(number: 16)
 oranges.sell(number: 3)
 
+//  apples.name = "Golden Delicious"
 
 class SoftDrinkItem: StockItem {
   var isFizzy: Bool

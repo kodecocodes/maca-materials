@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -49,7 +49,6 @@ mangos.buy(number: 3)
 mangos.sell(number: 1)
 mangos.numberInStock
 
-
 struct SoftDrinkItem: StockItemProtocol {
   var name: String
   var numberInStock: Int
@@ -67,7 +66,6 @@ var lemonades = SoftDrinkItem(
 
 var stocks: [StockItemProtocol] = [mangos, lemonades]
 
-
 extension StockItemProtocol {
   mutating func buy(number: Int) {
     numberInStock += number
@@ -81,9 +79,7 @@ extension StockItemProtocol {
 mangos.numberInStock = 0
 mangos.buy(number: 2)
 mangos.sell(number: 1)
-mangos.numberInStock
 
 lemonades.numberInStock = 0
 lemonades.buy(number: 1)
 lemonades.sell(number: 1)
-lemonades.numberInStock

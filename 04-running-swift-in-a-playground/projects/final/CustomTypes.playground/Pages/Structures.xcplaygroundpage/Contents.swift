@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -53,10 +53,10 @@ peaches.name
 peaches.numberInStock += 1
 
 peaches.buy(number: 4)
-peaches.numberInStock
 
 peaches.sell(number: 2)
-peaches.numberInStock
 
 peaches.sell(number: 1000)
-peaches.numberInStock
+
+//  let limes = StockItem(name: "lime", numberInStock: 3)
+//  limes.buy(number: 9)

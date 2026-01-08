@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -43,6 +43,7 @@ print("=== IF ===")
 if true {
   print("This is true")
 }
+print()
 
 print("=== IF ELSE ===")
 
@@ -59,6 +60,7 @@ if name.count < 4 {
 } else {
   print("Good name.")
 }
+print()
 
 print("=== IF ELSE IF ===")
 
@@ -100,6 +102,7 @@ print("=== FOR ===")
 for number in 1 ... 5 {
   print(number)
 }
+print()
 
 print("=== WHILE ===")
 
@@ -108,6 +111,7 @@ while counter < 5 {
   print("Counter: \(counter)")
   counter += 1
 }
+print()
 
 print("=== REPEAT WHILE ===")
 
@@ -116,6 +120,7 @@ repeat {
   print("Counter: \(counter)")
   counter += 1
 } while counter < 5
+print()
 
 print("=== FOR WITH ARRAYS ===")
 
@@ -123,7 +128,6 @@ let toys = ["Andy", "Bo-peep", "Buzz", "Jessie", "Rex"]
 for toy in toys {
   print(toy)
 }
-
 print()
 
 // MARK: - functions
@@ -134,6 +138,7 @@ func showVersion() {
   print("swifty - version 1.0")
 }
 showVersion()
+print()
 
 print("=== FUNCTION WITH INPUT ===")
 
@@ -141,6 +146,7 @@ func showVersion(versionNumber: Double) {
   print("swifty - version \(versionNumber)")
 }
 showVersion(versionNumber: 1.2)
+print()
 
 print("=== FUNCTION WITH OUTPUT ===")
 
@@ -149,6 +155,7 @@ func getVersion() -> Double {
 }
 let versionNumber = getVersion()
 print("Version \(versionNumber)")
+print()
 
 print("=== FUNCTION WITH INPUT & OUTPUT ===")
 
@@ -171,11 +178,13 @@ if let mightBeNumber {
 } else {
   print("mightBeNumber is nil")
 }
+print()
 
 print("=== FORCE UNWRAPPING OPTIONAL ===")
 
 var forcedString: String? = "This really is a string."
 print(forcedString!)
+print()
 
 print("=== GUARD LET ===")
 
@@ -189,5 +198,6 @@ func handlingOptionals(name: String?, age: Int?) {
 
 handlingOptionals(name: nil, age: nil)
 handlingOptionals(name: "Swift", age: nil)
-handlingOptionals(name: nil, age: 10)
-handlingOptionals(name: "Swift", age: 10)
+handlingOptionals(name: nil, age: 11)
+handlingOptionals(name: "Swift", age: 11)
+print()
