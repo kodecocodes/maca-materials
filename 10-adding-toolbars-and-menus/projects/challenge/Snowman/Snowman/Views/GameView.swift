@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -33,7 +33,7 @@
 import SwiftUI
 
 struct GameView: View {
-  @ObservedObject var appState: AppState
+  @Bindable var appState: AppState
 
   var game: Game {
     appState.games[appState.gameIndex]
@@ -48,7 +48,7 @@ struct GameView: View {
 
       Spacer()
 
-      VStack(spacing: 30.0) {
+      VStack(spacing: 30) {
         Spacer()
 
         Text(game.statusText)
@@ -77,8 +77,6 @@ struct GameView: View {
   }
 }
 
-struct GameView_Previews: PreviewProvider {
-  static var previews: some View {
-    GameView(appState: AppState())
-  }
+#Preview {
+  GameView(appState: AppState())
 }

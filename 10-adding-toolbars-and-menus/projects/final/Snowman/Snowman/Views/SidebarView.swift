@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -36,8 +36,6 @@ struct SidebarView: View {
   @Bindable var appState: AppState
 
   var body: some View {
-    @Bindable var appStateBindable = appState
-
     List(appState.games, selection: $appState.selectedID) { game in
       VStack(alignment: .leading) {
         Text("Game \(game.id)")
@@ -46,7 +44,7 @@ struct SidebarView: View {
         game.gameStatus.displayStatus
       }
       .padding(.vertical)
-      .foregroundStyle(game.gameStatus.statusTextColor)
+      .foregroundColor(game.gameStatus.statusTextColor)
     }
   }
 }

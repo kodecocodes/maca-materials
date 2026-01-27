@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -44,9 +44,9 @@ struct GameStats: View {
     }
 
     return """
-    Games won: \(wonGamesCount)
-    Games lost: \(lostGamesCount)
-    """
+      Games won: \(wonGamesCount)
+      Games lost: \(lostGamesCount)
+      """
   }
 
   var body: some View {

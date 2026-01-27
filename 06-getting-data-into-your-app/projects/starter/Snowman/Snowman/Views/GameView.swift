@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -42,7 +42,7 @@ struct GameView: View {
 
       Spacer()
 
-      VStack(spacing: 30.0) {
+      VStack(spacing: 30) {
         Spacer()
 
         Text("Enter a letter to guess the word.")

@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		261D50C12D3DBED500ED5FBD /* Snowman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snowman.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26874F0E2F106A14002221E6 /* Snowman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snowman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		261D50C32D3DBED500ED5FBD /* Snowman */ = {
+		26874F102F106A14002221E6 /* Snowman */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Snowman;
 			sourceTree = "<group>";
@@ -19,7 +19,7 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		261D50BE2D3DBED500ED5FBD /* Frameworks */ = {
+		26874F0B2F106A14002221E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		261D50B82D3DBED500ED5FBD = {
+		26874F052F106A14002221E6 = {
 			isa = PBXGroup;
 			children = (
-				261D50C32D3DBED500ED5FBD /* Snowman */,
-				261D50C22D3DBED500ED5FBD /* Products */,
+				26874F102F106A14002221E6 /* Snowman */,
+				26874F0F2F106A14002221E6 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		261D50C22D3DBED500ED5FBD /* Products */ = {
+		26874F0F2F106A14002221E6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				261D50C12D3DBED500ED5FBD /* Snowman.app */,
+				26874F0E2F106A14002221E6 /* Snowman.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		261D50C02D3DBED500ED5FBD /* Snowman */ = {
+		26874F0D2F106A14002221E6 /* Snowman */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 261D50D02D3DBED600ED5FBD /* Build configuration list for PBXNativeTarget "Snowman" */;
+			buildConfigurationList = 26874F192F106A15002221E6 /* Build configuration list for PBXNativeTarget "Snowman" */;
 			buildPhases = (
-				261D50BD2D3DBED500ED5FBD /* Sources */,
-				261D50BE2D3DBED500ED5FBD /* Frameworks */,
-				261D50BF2D3DBED500ED5FBD /* Resources */,
+				26874F0A2F106A14002221E6 /* Sources */,
+				26874F0B2F106A14002221E6 /* Frameworks */,
+				26874F0C2F106A14002221E6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				261D50C32D3DBED500ED5FBD /* Snowman */,
+				26874F102F106A14002221E6 /* Snowman */,
 			);
 			name = Snowman;
 			packageProductDependencies = (
 			);
 			productName = Snowman;
-			productReference = 261D50C12D3DBED500ED5FBD /* Snowman.app */;
+			productReference = 26874F0E2F106A14002221E6 /* Snowman.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		261D50B92D3DBED500ED5FBD /* Project object */ = {
+		26874F062F106A14002221E6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
 				TargetAttributes = {
-					261D50C02D3DBED500ED5FBD = {
-						CreatedOnToolsVersion = 16.2;
+					26874F0D2F106A14002221E6 = {
+						CreatedOnToolsVersion = 26.2;
 					};
 				};
 			};
-			buildConfigurationList = 261D50BC2D3DBED500ED5FBD /* Build configuration list for PBXProject "Snowman" */;
+			buildConfigurationList = 26874F092F106A14002221E6 /* Build configuration list for PBXProject "Snowman" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 261D50B82D3DBED500ED5FBD;
+			mainGroup = 26874F052F106A14002221E6;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 261D50C22D3DBED500ED5FBD /* Products */;
+			productRefGroup = 26874F0F2F106A14002221E6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				261D50C02D3DBED500ED5FBD /* Snowman */,
+				26874F0D2F106A14002221E6 /* Snowman */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		261D50BF2D3DBED500ED5FBD /* Resources */ = {
+		26874F0C2F106A14002221E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		261D50BD2D3DBED500ED5FBD /* Sources */ = {
+		26874F0A2F106A14002221E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		261D50CE2D3DBED600ED5FBD /* Debug */ = {
+		26874F172F106A15002221E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -178,7 +178,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -188,7 +188,7 @@
 			};
 			name = Debug;
 		};
-		261D50CF2D3DBED600ED5FBD /* Release */ = {
+		26874F182F106A15002221E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -235,7 +235,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -243,17 +243,17 @@
 			};
 			name = Release;
 		};
-		261D50D12D3DBED600ED5FBD /* Debug */ = {
+		26874F1A2F106A15002221E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Snowman/Snowman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Snowman/Preview Content\"";
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -263,22 +263,27 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Snowman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		261D50D22D3DBED600ED5FBD /* Release */ = {
+		26874F1B2F106A15002221E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Snowman/Snowman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Snowman/Preview Content\"";
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -288,7 +293,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Snowman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -296,25 +306,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		261D50BC2D3DBED500ED5FBD /* Build configuration list for PBXProject "Snowman" */ = {
+		26874F092F106A14002221E6 /* Build configuration list for PBXProject "Snowman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				261D50CE2D3DBED600ED5FBD /* Debug */,
-				261D50CF2D3DBED600ED5FBD /* Release */,
+				26874F172F106A15002221E6 /* Debug */,
+				26874F182F106A15002221E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		261D50D02D3DBED600ED5FBD /* Build configuration list for PBXNativeTarget "Snowman" */ = {
+		26874F192F106A15002221E6 /* Build configuration list for PBXNativeTarget "Snowman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				261D50D12D3DBED600ED5FBD /* Debug */,
-				261D50D22D3DBED600ED5FBD /* Release */,
+				26874F1A2F106A15002221E6 /* Debug */,
+				26874F1B2F106A15002221E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 261D50B92D3DBED500ED5FBD /* Project object */;
+	rootObject = 26874F062F106A14002221E6 /* Project object */;
 }

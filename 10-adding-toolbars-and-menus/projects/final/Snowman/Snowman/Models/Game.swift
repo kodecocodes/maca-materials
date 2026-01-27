@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -34,6 +34,7 @@ import SwiftUI
 
 struct Game: Identifiable {
   let id: Int
+
   var incorrectGuessCount = 0
   var statusText = "Enter a letter to start the game."
   var word = "SNOWMAN"
@@ -120,8 +121,7 @@ struct Game: Identifiable {
     let storedMaxWordLength = maxWordLength
     let storedUseProperNouns = useProperNouns
 
-    let words =
-    wordsList
+    let words = wordsList
       .components(separatedBy: .newlines)
       .filter { word in
         word.count >= storedMinWordLength && word.count <= storedMaxWordLength
