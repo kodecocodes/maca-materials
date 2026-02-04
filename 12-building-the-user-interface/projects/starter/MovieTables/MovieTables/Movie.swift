@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -64,7 +64,9 @@ extension Movie {
     do {
       let jsonData = try Data(contentsOf: fileURL)
       let movies = try JSONDecoder().decode([Movie].self, from: jsonData)
-      let sortedMovies = movies.sorted(using: KeyPathComparator(\.title))
+      let sortedMovies = movies.sorted { movieA, movieB in
+        movieA.title < movieB.title
+      }
       return sortedMovies
     } catch {
       print(error)

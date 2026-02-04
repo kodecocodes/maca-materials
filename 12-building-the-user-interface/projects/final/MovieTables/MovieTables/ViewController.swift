@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -39,6 +39,7 @@ class ViewController: NSViewController {
   @IBOutlet weak var runtimeLabel: NSTextField!
   @IBOutlet weak var genresLabel: NSTextField!
   @IBOutlet weak var principalsLabel: NSTextField!
+
   @IBOutlet weak var favButton: NSButton!
 
   var movies: [Movie] = []

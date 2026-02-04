@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -37,6 +37,31 @@ struct DataStore {
     URL.documentsDirectory.appending(component: "movies.json")
   }
 
+  func saveData(movies: [Movie]) {
+    DispatchQueue.global().async { [savedDataURL] in
+      do {
+        let jsonData = try JSONEncoder().encode(movies)
+        try jsonData.write(to: savedDataURL)
+      } catch {
+        print(error)
+      }
+      // 2
+    }
+  }
+
+  func readStoredData() -> [Movie] {
+    do {
+      let jsonData = try Data(contentsOf: savedDataURL)
+      let movies = try JSONDecoder().decode([Movie].self, from: jsonData)
+      let sortedMovies = movies.sorted { movieA, movieB in
+        movieA.title < movieB.title
+      }
+      return sortedMovies
+    } catch {
+      return readBundleData()
+    }
+  }
+
   func readBundleData() -> [Movie] {
     guard let fileURL = Bundle.main.url(
       forResource: "movies",
@@ -48,33 +73,13 @@ struct DataStore {
     do {
       let jsonData = try Data(contentsOf: fileURL)
       let movies = try JSONDecoder().decode([Movie].self, from: jsonData)
-      let sortedMovies = movies.sorted(using: KeyPathComparator(\.title))
+      let sortedMovies = movies.sorted { movieA, movieB in
+        movieA.title < movieB.title
+      }
       return sortedMovies
     } catch {
       print(error)
       return []
-    }
-  }
-
-  func saveData(movies: [Movie]) {
-    DispatchQueue.global().async {
-      do {
-        let jsonData = try JSONEncoder().encode(movies)
-        try jsonData.write(to: savedDataURL)
-      } catch {
-        print(error)
-      }
-    }
-  }
-
-  func readStoredData() -> [Movie] {
-    do {
-      let jsonData = try Data(contentsOf: savedDataURL)
-      let movies = try JSONDecoder().decode([Movie].self, from: jsonData)
-      let sortedMovies = movies.sorted(using: KeyPathComparator(\.title))
-      return sortedMovies
-    } catch {
-      return readBundleData()
     }
   }
 }

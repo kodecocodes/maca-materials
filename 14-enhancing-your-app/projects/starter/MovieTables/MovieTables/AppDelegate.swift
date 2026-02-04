@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -34,6 +34,7 @@ import Cocoa
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
+
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     // Insert code here to initialize your application
   }
@@ -45,4 +46,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
     return true
   }
+
 }

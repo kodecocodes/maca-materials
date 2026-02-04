@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -42,7 +42,16 @@ class Movie: Codable {
   var isFav = false
   var principals: [Principal]
 
-  init(id: String, title: String, runTime: Int, rating: Double, genres: String, year: String, isFav: Bool = false, principals: [Principal]) {
+  init(
+    id: String,
+    title: String,
+    runTime: Int,
+    rating: Double,
+    genres: String,
+    year: String,
+    isFav: Bool = false,
+    principals: [Principal]
+  ) {
     self.id = id
     self.title = title
     self.runTime = runTime
@@ -71,7 +80,9 @@ extension Movie {
     do {
       let jsonData = try Data(contentsOf: fileURL)
       let movies = try JSONDecoder().decode([Movie].self, from: jsonData)
-      let sortedMovies = movies.sorted(using: KeyPathComparator(\.title))
+      let sortedMovies = movies.sorted { movieA, movieB in
+        movieA.title < movieB.title
+      }
       return sortedMovies
     } catch {
       print(error)

@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -42,7 +42,16 @@ import Foundation
   @objc var isFav = false
   @objc var principals: [Principal]
 
-  init(id: String, title: String, runTime: Int, rating: Double, genres: String, year: String, isFav: Bool = false, principals: [Principal]) {
+  init(
+    id: String,
+    title: String,
+    runTime: Int,
+    rating: Double,
+    genres: String,
+    year: String,
+    isFav: Bool = false,
+    principals: [Principal]
+  ) {
     self.id = id
     self.title = title
     self.runTime = runTime
