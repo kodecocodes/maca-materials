@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -33,9 +33,8 @@
 import SwiftUI
 
 struct GuessesView: View {
-  @State var nextGuess = ""
   @Binding var game: Game
-
+  @State var nextGuess = ""
   @FocusState var entryFieldHasFocus: Bool
 
   var body: some View {
@@ -56,9 +55,6 @@ struct GuessesView: View {
           }
           .focused($entryFieldHasFocus)
           .onChange(of: game.id) {
-            entryFieldHasFocus = true
-          }
-          .onAppear {
             entryFieldHasFocus = true
           }
       }

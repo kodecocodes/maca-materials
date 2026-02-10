@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -36,12 +36,17 @@ import SwiftUI
 class AppState {
   var games: [Game]
   var gameIndex: Int
+  var bossMode = false
+
   var selectedID: Int? {
     didSet {
       selectGame(id: selectedID)
     }
   }
-  var bossMode = false
+
+  var gameHasStarted: Bool {
+    !games[gameIndex].guesses.isEmpty
+  }
 
   init() {
     let newGame = Game(id: 1)
@@ -49,10 +54,6 @@ class AppState {
 
     gameIndex = 0
     selectedID = 1
-  }
-
-  var gameHasStarted: Bool {
-    !games[gameIndex].guesses.isEmpty
   }
 
   func startNewGame() {

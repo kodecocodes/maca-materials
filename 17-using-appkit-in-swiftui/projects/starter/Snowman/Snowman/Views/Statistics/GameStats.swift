@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -45,9 +45,9 @@ struct GameStats: View {
     }
 
     return """
-    Games won: \(wonGamesCount)
-    Games lost: \(lostGamesCount)
-    """
+      Games won: \(wonGamesCount)
+      Games lost: \(lostGamesCount)
+      """
   }
 
   var gameStatsPoints: [ChartPoint] {
@@ -60,7 +60,7 @@ struct GameStats: View {
 
     let chartPoints = [
       ChartPoint(name: "Wins", value: wonGamesCount),
-      ChartPoint(name: "Losses", value: lostGamesCount)
+      ChartPoint(name: "Losses", value: lostGamesCount),
     ]
 
     return chartPoints
@@ -69,20 +69,22 @@ struct GameStats: View {
   var body: some View {
     Chart(gameStatsPoints) { point in
       BarMark(
-        x: .value("Name", point.name),
-        y: .value("Count", point.value))
+        x: .value("Count", point.value),
+        y: .value("Name", point.name)
+      )
       .foregroundStyle(by: .value("Name", point.name))
       .annotation(
         position: .overlay,
-        alignment: .bottom,
-        spacing: 20) {
-          Text("\(point.name): \(point.value)")
-            .font(.title2)
+        alignment: .leading,
+        spacing: 20
+      ) {
+        Text("\(point.name): \(point.value)")
+          .font(.title2)
       }
     }
     .chartForegroundStyleScale([
       "Wins": Color.green.gradient,
-      "Losses": Color.orange.gradient
+      "Losses": Color.orange.gradient,
     ])
     .frame(minWidth: 350, minHeight: 300)
     .padding()

@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -16,7 +16,7 @@
 /// instructional purposes related to programming, coding, application development,
 /// or information technology.  Permission for such use, copying, modification,
 /// merger, publication, distribution, sublicensing, creation of derivative works,
-/// or sale is expressly withheld./Users/sarah/Kodeco books/MA book/Local 2/dev2/Snowman/Snowman/SnowmanApp.swift
+/// or sale is expressly withheld.
 ///
 /// This project and source code may use libraries or frameworks that are
 /// released under various Open-Source licenses. Use of those libraries and
@@ -36,9 +36,6 @@ import SwiftUI
 struct SnowmanApp: App {
   @State var appState = AppState()
 
-  // Challenge - part 1
-  @Environment(\.openWindow) var openWindow
-
   var body: some Scene {
     WindowGroup {
       ContentView(appState: appState)
@@ -48,7 +45,7 @@ struct SnowmanApp: App {
       ToolbarCommands()
 
       CommandGroup(replacing: .newItem) {
-        Button("New Game") {
+        Button("New Game", systemImage: "plus") {
           appState.startNewGame()
         }
         .keyboardShortcut("n")
@@ -59,22 +56,21 @@ struct SnowmanApp: App {
       }
 
       CommandMenu("Game") {
-        Toggle("Boss Mode", isOn: $appState.bossMode)
+        Toggle("Boss Mode", systemImage: "person.fill", isOn: $appState.bossMode)
           .keyboardShortcut("b")
 
-        Button("Different Word") {
+        Button("Different Word", systemImage: "arrow.clockwise") {
           appState.getDifferentWord()
         }
         .keyboardShortcut("d")
         .disabled(appState.gameHasStarted)
 
-        // Challenge - part 2
-        Button("Look Up Word") {
-          let word = appState.games[appState.gameIndex].word
-          openWindow(value: word)
+        // Challenge 2:
+        Button(appState.games[appState.gameIndex].showHint ? "Hide Hint" : "Show Hint", systemImage: "questionmark") {
+          appState.games[appState.gameIndex].showHint.toggle()
         }
-        .keyboardShortcut("l")
-        .disabled(appState.games[appState.gameIndex].gameStatus == .inProgress)
+        .keyboardShortcut("h", modifiers: [.command, .shift])
+        .disabled(appState.games[appState.gameIndex].gameStatus != .inProgress)
       }
     }
 
@@ -86,10 +82,5 @@ struct SnowmanApp: App {
       StatsView(games: appState.games)
     }
     .keyboardShortcut("t", modifiers: .command)
-
-    WindowGroup(for: String.self) { $word in
-      LookupView(word: word ?? "snowman")
-    }
-    .defaultSize(width: 1000, height: 800)
   }
 }

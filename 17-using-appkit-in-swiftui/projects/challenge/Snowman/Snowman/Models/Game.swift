@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -34,11 +34,14 @@ import SwiftUI
 
 struct Game: Identifiable {
   let id: Int
+
+  let maxGuesses = 7
   var incorrectGuessCount = 0
   var statusText = "Enter a letter to start the game."
   var word = "SNOWMAN"
   var guesses: [String] = []
   var gameStatus = GameStatus.inProgress
+  var showHint = false
 
   @AppStorage("minWordLength") var minWordLength = 4
   @AppStorage("maxWordLength") var maxWordLength = 10
@@ -70,6 +73,40 @@ struct Game: Identifiable {
     return word
   }
 
+  var guessesLeft: Int {
+    maxGuesses - incorrectGuessCount
+  }
+
+  var hint: String? {
+    if gameStatus != .inProgress || !showHint {
+      return nil
+    }
+
+    if guesses.count == 0 {
+      return "Starting with a vowel is always a good idea."
+    }
+    let numberOfVowelsGuessed = guesses.count {
+      "AEIOU".contains($0)
+    }
+    if numberOfVowelsGuessed == 0 {
+      return "Try guessing a vowel."
+    } else if numberOfVowelsGuessed < 3 {
+      return "Try guessing another vowel."
+    }
+
+    let commonConsonants = ["T", "N", "S", "H", "R"]
+    let unusedCommons = commonConsonants.filter {
+      !guesses.contains($0)
+    }
+    if !unusedCommons.isEmpty {
+      return "These are commonly used consonants that you haven't tried yet: "
+      + unusedCommons
+        .joined(separator: ", ")
+    }
+
+    return "It's generally best to avoid uncommon letters like Z, Q and X."
+  }
+
   init(id: Int) {
     self.id = id
     word = getRandomWord()
@@ -84,10 +121,12 @@ struct Game: Identifiable {
       return
     }
 
-    if !word.contains(newGuess) && incorrectGuessCount < 7 {
+    if !word.contains(newGuess) && incorrectGuessCount < maxGuesses {
       incorrectGuessCount += 1
     }
     guesses.append(newGuess)
+
+    showHint = false
 
     checkForGameOver()
   }
@@ -100,7 +139,7 @@ struct Game: Identifiable {
     if unmatchedLetters.isEmpty {
       gameStatus = .won
       statusText = "HURRAY!!!! YOU WON!"
-    } else if incorrectGuessCount == 7 {
+    } else if incorrectGuessCount == maxGuesses {
       gameStatus = .lost
       statusText = "You lost. Better luck next time."
     } else {

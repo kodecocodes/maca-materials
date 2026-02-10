@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -31,28 +31,51 @@
 /// THE SOFTWARE.
 
 import SwiftUI
+import AppKit
 
-struct LettersView: View {
-  let letters: [Letter]
+struct WarningBar: NSViewRepresentable {
+  func makeCoordinator() -> Coordinator {
+    Coordinator(self)
+  }
 
-  var body: some View {
-    HStack {
-      ForEach(letters) { letter in
-        Text(letter.char)
-          .font(.title)
-          .bold()
-          .frame(width: 20, height: 20)
-          .padding()
-          .overlay(
-            RoundedRectangle(cornerRadius: 10)
-              .stroke(lineWidth: 2)
-              .foregroundColor(letter.color)
-              .padding(2))
-      }
+  func makeNSView(context: Context) -> NSLevelIndicator {
+    let levelIndicator = NSLevelIndicator()
+
+    levelIndicator.levelIndicatorStyle = .discreteCapacity
+    levelIndicator.maxValue = Double(maxGuesses)
+    levelIndicator.warningValue = 3
+    levelIndicator.criticalValue = 1
+
+    // Challenge 1:
+    levelIndicator.toolTip = "Click to see a hint for the next letter."
+
+    levelIndicator.target = context.coordinator
+    levelIndicator.action = #selector(Coordinator.handleClick)
+
+    return levelIndicator
+  }
+
+  func updateNSView(_ nsView: NSLevelIndicator, context: Context) {
+    nsView.intValue = Int32(guessesLeft)
+    context.coordinator.parent = self
+  }
+
+  typealias NSViewType = NSLevelIndicator
+
+  let guessesLeft: Int
+  let maxGuesses: Int
+
+  @Binding var showHint: Bool
+
+  class Coordinator {
+    var parent: WarningBar
+
+    init(_ parent: WarningBar) {
+      self.parent = parent
+    }
+
+    @objc func handleClick(sender: NSLevelIndicator) {
+      parent.showHint.toggle()
     }
   }
-}
-
-#Preview {
-  LettersView(letters: Game(id: 1).letters)
 }

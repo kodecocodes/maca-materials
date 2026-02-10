@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -31,48 +31,47 @@
 /// THE SOFTWARE.
 
 import SwiftUI
-import WebKit
 
-struct WebView: NSViewRepresentable {
-  func makeCoordinator() -> Coordinator {
-    Coordinator(self)
-  }
+struct GuessesView: View {
+  @Binding var game: Game
+  @State var nextGuess = ""
 
-  func makeNSView(context: Context) -> WKWebView {
-    let webView = WKWebView()
-    webView.navigationDelegate = context.coordinator
-    return webView
-  }
-
-  func updateNSView(_ nsView: WKWebView, context: Context) {
-    let address = "https://www.dictionary.com/browse/\(word)"
-    guard let url = URL(string: address) else {
-      return
+  var body: some View {
+    VStack {
+      HStack {
+        Text("Letters used:")
+        Text(game.guesses.joined(separator: ", "))
+      }
     }
-
-    let request = URLRequest(url: url)
-    nsView.load(request)
-  }
-
-  typealias NSViewType = WKWebView
-
-  let word: String
-  @Binding var isLoading: Bool
-
-  class Coordinator: NSObject, WKNavigationDelegate {
-    var parent: WebView
-
-    init(_ parent: WebView) {
-      self.parent = parent
-    }
-
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-      parent.isLoading = false
-    }
-
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: any Error) {
-      print(error.localizedDescription)
-      parent.isLoading = false
+    .onAppear(perform: startMonitoringKeystrokes)
+    .onChange(of: nextGuess) {
+      if game.gameStatus == .inProgress {
+        game.processGuess(letter: nextGuess)
+      }
+      nextGuess = ""
     }
   }
+
+  func startMonitoringKeystrokes() {
+    NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
+      guard let key = event.characters(byApplyingModifiers: .shift) else {
+        return event
+      }
+
+      if event.modifierFlags.contains(.command) {
+        return event
+      }
+
+      if key >= "A" && key <= "Z" {
+        nextGuess = key
+        return nil
+      }
+      return event
+    }
+  }
+}
+
+#Preview {
+  @Previewable @State var game = Game(id: 1)
+  GuessesView(game: $game)
 }

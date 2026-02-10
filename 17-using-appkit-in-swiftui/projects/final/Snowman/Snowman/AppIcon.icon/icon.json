@@ -1,0 +1,35 @@
+{
+  "fill" : {
+    "automatic-gradient" : "display-p3:1.00000,1.00000,0.92941,1.00000"
+  },
+  "groups" : [
+    {
+      "blend-mode-specializations" : [
+        {
+          "appearance" : "tinted",
+          "value" : "plus-darker"
+        }
+      ],
+      "layers" : [
+        {
+          "glass" : true,
+          "image-name" : "snowman_head 2.png",
+          "name" : "snowman_head 2"
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : false,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "squares" : [
+      "macOS"
+    ]
+  }
+}

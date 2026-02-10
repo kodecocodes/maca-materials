@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -64,12 +64,13 @@ struct WordStats: View {
   }
 
   var lineChartColor: Color {
-    let wonGamesCount = games.count {
+    let wonGamesCount = games.filter {
       $0.gameStatus == .won
-    }
-    let lostGamesCount = games.count {
+    }.count
+
+    let lostGamesCount = games.filter {
       $0.gameStatus == .lost
-    }
+    }.count
 
     if wonGamesCount > lostGamesCount {
       return .green
@@ -85,7 +86,8 @@ struct WordStats: View {
       ForEach(wordStatsPoints) { point in
         LineMark(
           x: .value("Game ID", point.name),
-          y: .value("Word Count", point.value))
+          y: .value("Word Count", point.value)
+        )
         .lineStyle(StrokeStyle(lineWidth: 4))
         .symbol(.diamond)
         .symbolSize(200)
@@ -97,7 +99,7 @@ struct WordStats: View {
       RuleMark(y: .value("Average", 7.5))
     }
     .chartYScale(domain: .automatic(includesZero: false))
-    .frame(minWidth: 250, minHeight: 300)
+    .frame(minWidth: 350, minHeight: 300)
     .padding()
   }
 }

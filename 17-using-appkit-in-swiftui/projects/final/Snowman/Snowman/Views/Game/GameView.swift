@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -32,27 +32,67 @@
 
 import SwiftUI
 
-struct LettersView: View {
-  let letters: [Letter]
+struct GameView: View {
+  @Bindable var appState: AppState
+
+  var game: Game {
+    appState.games[appState.gameIndex]
+  }
 
   var body: some View {
     HStack {
-      ForEach(letters) { letter in
-        Text(letter.char)
-          .font(.title)
-          .bold()
-          .frame(width: 20, height: 20)
-          .padding()
-          .overlay(
-            RoundedRectangle(cornerRadius: 10)
-              .stroke(lineWidth: 2)
-              .foregroundColor(letter.color)
-              .padding(2))
+      VStack {
+        Image("\(game.incorrectGuessCount)")
+          .resizable()
+          .aspectRatio(contentMode: .fit)
+
+        WarningBar(
+          guessesLeft: game.guessesLeft,
+          maxGuesses: game.maxGuesses,
+          showHint: $appState.games[appState.gameIndex].showHint
+        )
+        .padding(.horizontal)
       }
+      .frame(width: 230)
+
+      Spacer()
+
+      VStack(spacing: 30) {
+        Spacer()
+
+        Text(statusOrHint)
+          .font(.title2)
+          .foregroundStyle(game.gameStatus.statusTextColor)
+
+        LettersView(letters: game.letters)
+
+        Spacer()
+
+        Button("New Game") {
+          appState.startNewGame()
+        }
+        .keyboardShortcut(.defaultAction)
+        .opacity(game.gameStatus == .inProgress ? 0 : 1)
+        .disabled(game.gameStatus == .inProgress)
+
+        Spacer()
+
+        GuessesView(game: $appState.games[appState.gameIndex])
+      }
+      .padding()
+
+      Spacer()
     }
+  }
+
+  var statusOrHint: String {
+    if let hint = game.hint {
+      return hint
+    }
+    return game.statusText
   }
 }
 
 #Preview {
-  LettersView(letters: Game(id: 1).letters)
+  GameView(appState: AppState())
 }

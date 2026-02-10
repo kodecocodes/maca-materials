@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -39,7 +39,6 @@ struct ContentView: View {
     Group {
       if appState.bossMode {
         Color.white
-          .navigationTitle("Work")
       } else {
         NavigationSplitView {
           SidebarView(appState: appState)
@@ -52,10 +51,8 @@ struct ContentView: View {
     .animation(.easeInOut, value: appState.bossMode)
     .toolbar(id: "content_view_toolbar") {
       ToolbarItem(id: "boss_mode_toolbar_item", placement: .automatic) {
-        Button {
+        Button("Boss", systemImage: "person.fill") {
           appState.bossMode.toggle()
-        } label: {
-          Label("Boss", systemImage: "person.circle.fill")
         }
         .help("Quick, the boss is coming!")
       }

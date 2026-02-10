@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -32,22 +32,67 @@
 
 import SwiftUI
 
-struct LookupView: View {
-  let word: String
-  @State var webViewIsLoading = true
+struct GameView: View {
+  @Bindable var appState: AppState
+
+  var game: Game {
+    appState.games[appState.gameIndex]
+  }
 
   var body: some View {
-    ZStack {
-      WebView(word: word, isLoading: $webViewIsLoading)
+    HStack {
+      VStack {
+        Image("\(game.incorrectGuessCount)")
+          .resizable()
+          .aspectRatio(contentMode: .fit)
 
-      if webViewIsLoading {
-        ProgressView()
+        WarningBar(
+          guessesLeft: game.guessesLeft,
+          maxGuesses: game.maxGuesses,
+          showHint: $appState.games[appState.gameIndex].showHint
+        )
+        .padding(.horizontal)
       }
+      .frame(width: 230)
+
+      Spacer()
+
+      VStack(spacing: 30) {
+        Spacer()
+
+        Text(statusOrHint)
+          .font(.title2)
+          .foregroundStyle(game.gameStatus.statusTextColor)
+
+        LettersView(letters: game.letters)
+
+        Spacer()
+
+        Button("New Game") {
+          appState.startNewGame()
+        }
+        .keyboardShortcut(.defaultAction)
+        .opacity(game.gameStatus == .inProgress ? 0 : 1)
+        .disabled(game.gameStatus == .inProgress)
+
+        Spacer()
+
+        GuessesView(game: $appState.games[appState.gameIndex])
+      }
+      .padding()
+
+      Spacer()
     }
-    .navigationTitle(webViewIsLoading ? "Loading…" : word)
+  }
+
+  var statusOrHint: String {
+    if let hint = game.hint {
+      return hint
+    }
+    return game.statusText
   }
 }
 
 #Preview {
-  LookupView(word: "SNOWMAN")
+  GameView(appState: AppState())
 }

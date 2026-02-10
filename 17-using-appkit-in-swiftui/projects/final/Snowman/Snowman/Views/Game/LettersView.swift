@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -32,58 +32,28 @@
 
 import SwiftUI
 
-struct GameView: View {
-  @Environment(\.openWindow) var openWindow
-  @Bindable var appState: AppState
-
-  var game: Game {
-    appState.games[appState.gameIndex]
-  }
+struct LettersView: View {
+  let letters: [Letter]
 
   var body: some View {
     HStack {
-      Image("\(game.incorrectGuessCount)")
-        .resizable()
-        .aspectRatio(contentMode: .fit)
-        .frame(width: 230)
-
-      Spacer()
-
-      VStack(spacing: 30.0) {
-        Spacer()
-
-        Text(game.statusText)
-          .font(.title2)
-          .foregroundColor(game.gameStatus.statusTextColor)
-
-        LettersView(letters: game.letters)
-
-        Spacer()
-
-        HStack(spacing: 60) {
-          Button("Look Up Word") {
-            openWindow(value: game.word)
+      ForEach(letters) { letter in
+        Text(letter.char)
+          .font(.title)
+          .bold()
+          .frame(width: 20, height: 20)
+          .padding()
+          .overlay {
+            RoundedRectangle(cornerRadius: 10)
+              .stroke(lineWidth: 2)
+              .foregroundStyle(letter.color)
+              .padding(2)
           }
-
-          Button("New Game") {
-            appState.startNewGame()
-          }
-          .keyboardShortcut(.defaultAction)
-        }
-        .opacity(game.gameStatus == .inProgress ? 0 : 1)
-        .disabled(game.gameStatus == .inProgress)
-
-        Spacer()
-
-        GuessesView(game: $appState.games[appState.gameIndex])
       }
-      .padding()
-
-      Spacer()
     }
   }
 }
 
 #Preview {
-  GameView(appState: AppState())
+  LettersView(letters: Game(id: 1).letters)
 }
