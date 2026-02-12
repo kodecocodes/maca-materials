@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -36,7 +36,8 @@ extension NSWindowController: @retroactive NSSearchFieldDelegate {
   public func controlTextDidChange(_ obj: Notification) {
     guard
       let searchField = obj.object as? NSSearchField,
-      let viewController = NSApp.keyWindow?.contentViewController as? ViewController
+      let viewController = NSApp.keyWindow?.contentViewController
+        as? ViewController
     else {
       return
     }

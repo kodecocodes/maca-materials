@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -39,19 +39,19 @@ class ViewController: NSViewController {
   @IBOutlet weak var runtimeLabel: NSTextField!
   @IBOutlet weak var genresLabel: NSTextField!
   @IBOutlet weak var principalsLabel: NSTextField!
+
   @IBOutlet weak var favButton: NSButton!
   @IBOutlet weak var statusLabel: NSTextField!
 
-  var movies: [Movie] = []
-  var visibleMovies: [Movie] = []
   var dataStore = DataStore()
+  var movies: [Movie] = []
   var selectedMovie: Movie?
   var searchText = "" {
     didSet {
       searchMovies()
     }
   }
-
+  var visibleMovies: [Movie] = []
   var viewMode = ViewMode.allMovies {
     didSet {
       searchMovies()
@@ -98,10 +98,10 @@ class ViewController: NSViewController {
     }
 
     if let sortedMovies = (visibleMovies as NSArray)
-      .sortedArray(using: moviesTableView.sortDescriptors) as? [Movie] {
+      .sortedArray(using: moviesTableView.sortDescriptors) as? [Movie]
+    {
       visibleMovies = sortedMovies
     }
-
     moviesTableView.reloadData()
     showMovieCount()
   }
@@ -133,7 +133,7 @@ class ViewController: NSViewController {
 
   // MARK: - Contextual Menu Actions
 
-  func clickedMovie() -> Movie? {
+  var clickedMovie: Movie? {
     let row = moviesTableView.clickedRow
     if row > -1 {
       return visibleMovies[row]
@@ -142,7 +142,7 @@ class ViewController: NSViewController {
   }
 
   @IBAction func editMovie(_ sender: Any) {
-    guard let movie = clickedMovie() else {
+    guard let movie = clickedMovie else {
       return
     }
     performSegue(withIdentifier: "showEditWindow", sender: movie)
@@ -189,7 +189,7 @@ class ViewController: NSViewController {
   }
 
   @IBAction func showInBrowser(_ sender: Any) {
-    guard let movie = clickedMovie() else {
+    guard let movie = clickedMovie else {
       return
     }
 
@@ -201,7 +201,7 @@ class ViewController: NSViewController {
   }
 
   @IBAction func deleteMovie(_ sender: Any) {
-    guard let movie = clickedMovie() else {
+    guard let movie = clickedMovie else {
       return
     }
 

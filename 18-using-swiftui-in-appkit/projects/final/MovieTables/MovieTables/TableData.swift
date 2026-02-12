@@ -1,4 +1,4 @@
-/// Copyright (c) 2025 Kodeco Inc.
+/// Copyright (c) 2026 Kodeco Inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -54,8 +54,9 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource {
       cellID = "YearCell"
       cellText = movie.year
     case "RatingColumn":
-      //  cellID = "RatingCell"
-      //  cellText = "\(movie.rating)"
+      // cellID = "RatingCell"
+      // cellText = "\(movie.rating)"
+
       let view = RatingView(rating: movie.rating)
       let host = NSHostingView(rootView: view)
       return host
@@ -116,8 +117,8 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource {
     let titleSortDesc = NSSortDescriptor(
       key: "title",
       ascending: true,
-      selector: #selector(
-        NSString.localizedCaseInsensitiveCompare(_:)))
+      selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))
+
     let yearSortDesc = NSSortDescriptor(key: "year", ascending: true)
     let ratingSortDesc = NSSortDescriptor(key: "rating", ascending: true)
 
@@ -143,7 +144,10 @@ extension ViewController: NSTableViewDelegate, NSTableViewDataSource {
     }
   }
 
-  func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
+  func tableView(
+    _ tableView: NSTableView,
+    sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]
+  ) {
     if let sortedMovies = (visibleMovies as NSArray)
       .sortedArray(using: moviesTableView.sortDescriptors) as? [Movie] {
       visibleMovies = sortedMovies
