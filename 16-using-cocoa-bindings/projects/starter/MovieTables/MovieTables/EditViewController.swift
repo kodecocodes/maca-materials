@@ -44,10 +44,6 @@ class EditViewController: NSViewController {
     }
   }
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
-
   @IBAction func cancelEdits(_ sender: Any) {
     view.window?.close()
   }
