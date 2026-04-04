@@ -73,25 +73,25 @@ struct GameStats: View {
         x: .value("Name", point.name),
         y: .value("Count", point.value)
       )
-      .foregroundStyle(by: .value("Name", point.name))
-      .annotation(
-        position: .overlay,
-        // Challenge 1: move annotation
-        alignment: .bottom,
-        spacing: 20
-      ) {
-        Text("\(point.name): \(point.value)")
-          .font(.title2)
-      }
+        .foregroundStyle(by: .value("Name", point.name))
+        .annotation(
+          position: .overlay,
+          // Challenge 1: move annotation
+          alignment: .bottom,
+          spacing: 20
+        ) {
+          Text("\(point.name): \(point.value)")
+            .font(.title2)
+        }
     }
-    .chartForegroundStyleScale([
-      "Wins": Color.green.gradient,
-      "Losses": Color.orange.gradient,
-    ])
-    .frame(minWidth: 350, minHeight: 300)
-    .padding()
-    .shadow(radius: 5, x: 5, y: 5)
-    .chartLegend(.hidden)
+      .chartForegroundStyleScale([
+        "Wins": Color.green.gradient,
+        "Losses": Color.orange.gradient,
+      ])
+      .frame(minWidth: 350, minHeight: 300)
+      .padding()
+      .shadow(radius: 5, x: 5, y: 5)
+      .chartLegend(.hidden)
   }
 }
 

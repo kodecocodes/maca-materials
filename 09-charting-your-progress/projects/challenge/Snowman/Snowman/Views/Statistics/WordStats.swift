@@ -93,19 +93,19 @@ struct WordStats: View {
           x: .value("Game ID", point.name),
           y: .value("Word Count", point.value)
         )
-        .lineStyle(StrokeStyle(lineWidth: 4))
-        .symbol(.diamond)
-        .symbolSize(200)
-        .foregroundStyle(lineChartColor)
-        .accessibilityValue("Game \(point.name)")
-        .accessibilityLabel("had \(point.value) letters in the word")
+          .lineStyle(StrokeStyle(lineWidth: 4))
+          .symbol(.diamond)
+          .symbolSize(200)
+          .foregroundStyle(lineChartColor)
+          .accessibilityValue("Game \(point.name)")
+          .accessibilityLabel("had \(point.value) letters in the word")
       }
 
       RuleMark(y: .value("Average", 7.5))
     }
-    .chartYScale(domain: .automatic(includesZero: false))
-    .frame(minWidth: 350, minHeight: 300)
-    .padding()
+      .chartYScale(domain: .automatic(includesZero: false))
+      .frame(minWidth: 350, minHeight: 300)
+      .padding()
   }
 }
 

@@ -113,8 +113,7 @@ struct Game: Identifiable {
       return "SNOWMAN"
     }
 
-    let words =
-    wordsList
+    let words = wordsList
       .components(separatedBy: .newlines)
       .filter { word in
         word.count >= 4 && word.count <= 10
