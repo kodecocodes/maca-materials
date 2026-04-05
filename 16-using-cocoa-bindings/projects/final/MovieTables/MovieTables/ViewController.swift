@@ -98,8 +98,7 @@ class ViewController: NSViewController {
     }
 
     if let sortedMovies = (visibleMovies as NSArray)
-      .sortedArray(using: moviesTableView.sortDescriptors) as? [Movie]
-    {
+      .sortedArray(using: moviesTableView.sortDescriptors) as? [Movie] {
       visibleMovies = sortedMovies
     }
     moviesTableView.reloadData()
