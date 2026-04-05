@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		CD679E3D2D4B728A009EA746 /* MyFirst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirst.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD2042482EE185FA00E63D4E /* MyFirst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirst.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		CD679E3F2D4B728A009EA746 /* MyFirst */ = {
+		CD20424A2EE185FA00E63D4E /* MyFirst */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MyFirst;
 			sourceTree = "<group>";
@@ -19,7 +19,7 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CD679E3A2D4B728A009EA746 /* Frameworks */ = {
+		CD2042452EE185FA00E63D4E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CD679E342D4B728A009EA746 = {
+		CD20423F2EE185FA00E63D4E = {
 			isa = PBXGroup;
 			children = (
-				CD679E3F2D4B728A009EA746 /* MyFirst */,
-				CD679E3E2D4B728A009EA746 /* Products */,
+				CD20424A2EE185FA00E63D4E /* MyFirst */,
+				CD2042492EE185FA00E63D4E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		CD679E3E2D4B728A009EA746 /* Products */ = {
+		CD2042492EE185FA00E63D4E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CD679E3D2D4B728A009EA746 /* MyFirst.app */,
+				CD2042482EE185FA00E63D4E /* MyFirst.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CD679E3C2D4B728A009EA746 /* MyFirst */ = {
+		CD2042472EE185FA00E63D4E /* MyFirst */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD679E4C2D4B728C009EA746 /* Build configuration list for PBXNativeTarget "MyFirst" */;
+			buildConfigurationList = CD2042532EE185FC00E63D4E /* Build configuration list for PBXNativeTarget "MyFirst" */;
 			buildPhases = (
-				CD679E392D4B728A009EA746 /* Sources */,
-				CD679E3A2D4B728A009EA746 /* Frameworks */,
-				CD679E3B2D4B728A009EA746 /* Resources */,
+				CD2042442EE185FA00E63D4E /* Sources */,
+				CD2042452EE185FA00E63D4E /* Frameworks */,
+				CD2042462EE185FA00E63D4E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				CD679E3F2D4B728A009EA746 /* MyFirst */,
+				CD20424A2EE185FA00E63D4E /* MyFirst */,
 			);
 			name = MyFirst;
 			packageProductDependencies = (
 			);
 			productName = MyFirst;
-			productReference = CD679E3D2D4B728A009EA746 /* MyFirst.app */;
+			productReference = CD2042482EE185FA00E63D4E /* MyFirst.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CD679E352D4B728A009EA746 /* Project object */ = {
+		CD2042402EE185FA00E63D4E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastSwiftUpdateCheck = 2610;
+				LastUpgradeCheck = 2610;
 				TargetAttributes = {
-					CD679E3C2D4B728A009EA746 = {
-						CreatedOnToolsVersion = 16.2;
+					CD2042472EE185FA00E63D4E = {
+						CreatedOnToolsVersion = 26.1.1;
 					};
 				};
 			};
-			buildConfigurationList = CD679E382D4B728A009EA746 /* Build configuration list for PBXProject "MyFirst" */;
+			buildConfigurationList = CD2042432EE185FA00E63D4E /* Build configuration list for PBXProject "MyFirst" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = CD679E342D4B728A009EA746;
+			mainGroup = CD20423F2EE185FA00E63D4E;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = CD679E3E2D4B728A009EA746 /* Products */;
+			productRefGroup = CD2042492EE185FA00E63D4E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CD679E3C2D4B728A009EA746 /* MyFirst */,
+				CD2042472EE185FA00E63D4E /* MyFirst */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CD679E3B2D4B728A009EA746 /* Resources */ = {
+		CD2042462EE185FA00E63D4E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CD679E392D4B728A009EA746 /* Sources */ = {
+		CD2042442EE185FA00E63D4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		CD679E4A2D4B728C009EA746 /* Debug */ = {
+		CD2042512EE185FC00E63D4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -178,7 +178,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -188,7 +188,7 @@
 			};
 			name = Debug;
 		};
-		CD679E4B2D4B728C009EA746 /* Release */ = {
+		CD2042522EE185FC00E63D4E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -235,7 +235,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -243,17 +243,17 @@
 			};
 			name = Release;
 		};
-		CD679E4D2D4B728C009EA746 /* Debug */ = {
+		CD2042542EE185FC00E63D4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MyFirst/MyFirst.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MyFirst/Preview Content\"";
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -261,24 +261,29 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.audrey.MyFirst;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.MyFirst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		CD679E4E2D4B728C009EA746 /* Release */ = {
+		CD2042552EE185FC00E63D4E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MyFirst/MyFirst.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MyFirst/Preview Content\"";
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -286,9 +291,14 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.audrey.MyFirst;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.MyFirst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -296,25 +306,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CD679E382D4B728A009EA746 /* Build configuration list for PBXProject "MyFirst" */ = {
+		CD2042432EE185FA00E63D4E /* Build configuration list for PBXProject "MyFirst" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CD679E4A2D4B728C009EA746 /* Debug */,
-				CD679E4B2D4B728C009EA746 /* Release */,
+				CD2042512EE185FC00E63D4E /* Debug */,
+				CD2042522EE185FC00E63D4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD679E4C2D4B728C009EA746 /* Build configuration list for PBXNativeTarget "MyFirst" */ = {
+		CD2042532EE185FC00E63D4E /* Build configuration list for PBXNativeTarget "MyFirst" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CD679E4D2D4B728C009EA746 /* Debug */,
-				CD679E4E2D4B728C009EA746 /* Release */,
+				CD2042542EE185FC00E63D4E /* Debug */,
+				CD2042552EE185FC00E63D4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CD679E352D4B728A009EA746 /* Project object */;
+	rootObject = CD2042402EE185FA00E63D4E /* Project object */;
 }
